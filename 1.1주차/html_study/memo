@@ -206,12 +206,16 @@ https://github.com/yonggyo1125
         </from>
 
         input
-        type = "text" : 한줄 텍스트
-        type = "password" : 비밀번호 형식
-        type = 'radio' : 여러개 중에서 한개 선택 : 라디오버튼
-        type = 'submit': 양식제출
+            type = "text" : 한줄 텍스트
+            type = "password" : 비밀번호 형식
+            type = 'radio' : 여러개 중에서 한개 선택 : 라디오버튼
+            type = 'submit': 양식 제출 버튼
 
         member_type=on
         (데이터이름)  = (값)
+
+        from
+            action : 제출할 경로
+            method : 제출 방식(GET, POST)
 
 
