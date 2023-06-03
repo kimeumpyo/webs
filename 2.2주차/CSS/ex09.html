@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+<body>
+  <style>
+    /*input에 있는 체크포인트를 지워준다*/
+    input[type="radio"]{display: none;}
+    /*+ 인접 형제*/
+    input[type="radio"]+label{padding: 20px 0 20px 20px; background: url("images/radio-off.png") no-repeat left center;}
+    input[type="radio"]:checked+label{background: url("images/radio-on.png")no-repeat left center;}
+  </style>
+  <input type="radio" name="type" value="private" id="type_private" checked>
+  <label for="type_private">개인회원</label>
+
+  <input type="radio" name="type" value="business" id="type_business">
+  <label for="type_business">사업자회원</label>
+</body>
+</html>

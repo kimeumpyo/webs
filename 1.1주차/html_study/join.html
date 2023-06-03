@@ -1,53 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <title>Document</title>
+  <title>회원가입</title>
 </head>
 
 <body>
-    <h1>회원가입</h1>
-    <form method="POST" action="join_ps.html">
-        <dl>
-            <dt>아이디</dt>
-            <dd>
-                <input type="radio" name="member_type">개인회원
-                <input type="radio" name="member_type">사업자회원
-            </dd>
-        </dl>
-        <dl>
-            <dt>아이디</dt>
-            <dd>
-                <input type="text" name="userId">
-            </dd>
-        </dl>
-        <dl>
-            <dt>이메일</dt>
-            <dd>
-                <input type="text" name="userEmail">
-            </dd>
-        </dl>
-        <dl>
-            <dt>비밀번호</dt>
-            <dd>
-                <input type="password" name="Pw">
-            </dd>
-        </dl>
-        <dl>
-            <dt>비밀번호 확인</dt>
-            <dd>
-                <input type="password" name="PwRe">
-            </dd>
-        </dl>
-        <dl>
-            <dt>이름</dt>
-            <dd>
-                <input type="text"name="Nm">
-            </dd>
-        </dl>
-        <input type="submit">
-
-    </form>
+  <h1>회원가입</h1>
+  <form method="POST" action="join_ps.html">
+    <dl>
+      <dt>회원구분</dt>
+      <dd>
+        <input type="radio" name="member_type">개인회원
+        <input type="radio" name="member_type">사업자회원
+      </dd>
+    </dl>
+    <dl>
+      <dt>아이디</dt>
+      <dd>
+        <input type="text" name="userId">
+      </dd>
+    </dl>
+    <dl>
+      <dt>이메일</dt>
+      <dd>
+        <input type="text" name="email">
+      </dd>
+    </dl>
+    <dl>
+      <dt>비밀번호</dt>
+      <dd>
+        <input type="password" name="userPw">
+      </dd>
+    </dl>
+    <dl>
+      <dt>비밀번호 확인</dt>
+      <dd>
+        <input type="password" name="userPwRe">
+      </dd>
+    </dl>
+    <dl>
+      <dt>이름</dt>
+      <dd>
+        <input type="text" name="userNm">
+      </dd>
+    </dl>
+    <input type="submit">
+  </form>
 </body>
 
 </html>

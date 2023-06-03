@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+<body>
+  <style>
+    /*li 태그 중에서 클래스명이 menu 인 선택자*/
+    li.menu{background-color: rgb(255, 249, 170);} 
+    .menu{background-color: aqua;}
+    .line{border-bottom: 1px solid black;}
+
+    li#menu5{background-color: pink;}
+    #menu4{background-color: rgb(176, 248, 176) !important;}
+  </style>
+  <ul>
+    <li>메뉴1</li>
+    <li>메뉴2</li>
+    <li class="menu line">메뉴3</li>
+    <li class="menu" id="menu4" style="background: rgb(207, 157, 248);">메뉴4</li>
+    <li id="menu5">메뉴5</li>
+  </ul>
+</body>
+</html>

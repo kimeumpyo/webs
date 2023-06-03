@@ -209,13 +209,72 @@ https://github.com/yonggyo1125
             type = "text" : 한줄 텍스트
             type = "password" : 비밀번호 형식
             type = 'radio' : 여러개 중에서 한개 선택 : 라디오버튼
-            type = 'submit': 양식 제출 버튼
+            type = 'checkbox' : 여러개 중에서 여러개 선택 : 체크박스
+                취미, 동의 등
+                    - checked : 체크된 상태 변경
+                label 태그와 함께 자주 쓰인다.
+                    1) label 태그로 input 태그를 감싸면 label태그를 클릭하면 input 태그가 체크
+                    2) label for와 input id를 동일하게 지정
+                    
+            type = 'number' : 숫자만 입력
+                min - 최소 값
+                max - 최대 값
+                step - 증감 단위
 
+            type = 'email' : 이메일 형식만 입력 -> 제출시에 형식 체크
+            type = 'date' : 날짜 입력 - 달력 노출
+            type = 'range' : 범위 선택
+                min - 최소 값
+                max - 최대 값
+                step - 증감 단위
+            type = 'hidden' : 노출x, 제출처에 데이터 전달용 목적으로만 사용할 때
+
+            type = 'submit': 양식 제출 버튼
+            type = "reset" : 입력값 초기화
+                - value : 버튼명
+
+            참고)
+                button
+                    type - submit : 제출 버튼
+                         - reset : 초기화 버튼
+                         - button :  일반 버튼
+            
         member_type=on
         (데이터이름)  = (값)
+            name : 데이터 이름
+
+            value : 값
+                - 입력 항목 (text, password ...): 입력한 값이 value
+            
+            placeholder : 안내문구
+                - 입력하기전에 띄워주는 문구
+
+            textarea : 여러줄 입력
+                - 자기소개
+                - rows : 노출 되는 행의 갯수
+                - cols : 노출 되는 열의 갯수
+
+            select -  여러개 중에서 한개(option) 선택
+                - multiple : 여러개 선택 (ctrl + 클릭)
+                - size : 노출될 갯수
+                - selected
+                option
+                    value
+
+            required 속성
+                - 필수 입력 항목
 
         from
-            action : 제출할 경로
+            action : 제출할 경로(서버쪽 경로)
             method : 제출 방식(GET, POST)
+                - GET
+                    - 서버쪽 자원 조회
+                    - 조회를 위한 데이터
+                
+                - POST
+                    - 작성하다
+                    - 서버쪽에 기록을 위한 용도
+                    - content-type : application/x-www-form-urlencoded
+                    - 요청 body
 
 
