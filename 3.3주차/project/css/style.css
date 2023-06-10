@@ -1,0 +1,148 @@
+/* 공통 스타일 */
+/*폰트 import*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+*{
+  /*폰트 스타일*/
+  font-family: 'Noto Sans KR', sans-serif;
+  box-sizing: border-box;
+  color: #212121;
+}
+
+html{
+  font-size: 13px; /* 1rem - 13px*/
+}
+
+/* 공통 초기화 */
+body{margin: 0;}
+
+ul, ol{
+  list-style: none; 
+  padding: 0;}
+dl, dt, dd{
+  padding: 0; 
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+img{
+  border: 0;
+}
+
+/* 상단 로고 메뉴 영역 S */
+
+header{
+  display: flex;
+  justify-content: space-between; /* 좌우 정렬 */
+  height: 66px; /* 높이값 66*/
+  align-items: center; /* 높이 가운데 정렬*/
+  border-bottom: 1px solid #e6e6e6; /* 밑줄 */
+  padding: 0 15px; /* 여백 좌우 */
+}
+
+header .logo img{height: 34px;} /* logo 사이즈 */
+header > section i {font-size: 2.2em;}/* 아이콘 사이즈 */
+header > section.left a {margin-right: 10px;} 
+header > section.right a {margin-left: 10px;}
+
+/* 메인 메뉴 영역 S */
+nav{ 
+  display: flex;
+  height: 44px;
+}
+nav > a {
+  flex-grow: 1; 
+  width: 0; /* 동일한 넓이설정 */
+  text-align: center; /* text 가운데 정렬 */
+  line-height: 44px; /*44px 안에서 높이 가운데 정렬*/
+}
+
+
+/* 메인 배너 영역 S */
+main .main_banner img{
+  width: 100%;
+  display: block; /* 블럭을 해주어 메뉴와 경계를 없애준다 */
+}
+
+/* 메인 중간 메뉴 S */
+main .mid_menus {
+  display: flex; 
+  flex-wrap: wrap;
+  border: 10px solid #ededed;
+  border-left: 0;
+  border-right: 0;
+}
+main .mid_menus > a {
+  width: calc(100% / 3); /* 전체 넓이에서 3등분 (계산식은 띄어쓰기!) */
+  text-align: center;
+  height: 50px;
+  line-height: 50px; /* 글자 세로 가운데 정렬*/
+  border-left: 1px solid #ededed; /* 경계선 */
+  border-top: 1px  solid #ededed;
+  font-size: 1.076rem;
+  font-weight: 500;
+} 
+
+main .mid_menus > a:nth-of-type(3n+1){border-left: 0;} /* 죄측선 제거*/
+
+main .mid_menus > a:nth-of-type(1),
+main .mid_menus > a:nth-of-type(2),
+main .mid_menus > a:nth-of-type(3){border-top: 0;} /* 상단선 제거 */
+
+/* 메인 중간 배너 S */
+
+main .mid_banners {
+  display: flex;
+  flex-wrap: wrap;
+}
+main .mid_banners > a {width: 50%;}
+main .mid_banners > a:nth-of-type(1){width: 100%;}
+main .mid_banners img {
+  width: 100%; /* 이미지를 화면에 채워준다*/
+  display: block; /*경계부분을 없애준다*/
+}
+
+/* 하단 고정 메뉴 S */
+.bottom_quicks {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  padding: 9px 15px;
+  display: flex;
+  justify-content: space-around;  /* 동일한 여백 */
+  border-top: 1px solid #dfe1e5;
+}
+.bottom_quicks .tit {
+  font-size: 0.618rem;
+  text-align: center;
+  color: #2d2f38;
+}
+.bottom_quicks .icon{
+  height: 30px;
+  margin-bottom: 5px;
+}
+.bottom_quicks .icon1 {
+  background:url("../images/pen.png") no-repeat center;
+  background-size: 26px;
+}
+.bottom_quicks .icon2 {
+  background:url("../images/comment.png") no-repeat center;
+  background-size: 38px;
+}
+.bottom_quicks .icon3 {
+  background:url("../images/truck.png") no-repeat center;
+  background-size: 38px;
+}
+.bottom_quicks .icon4 {
+  background:url("../images/person.png") no-repeat center;
+  background-size: 20px;
+}
+
+
+
+
+

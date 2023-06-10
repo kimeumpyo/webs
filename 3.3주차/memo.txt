@@ -1,0 +1,1 @@
+line-height : 높이 -> 가운데
