@@ -355,16 +355,29 @@ CSS
       row-reverse : 우 -> 좌
       column : 위 -> 아래
       column-reverse : 아래 -> 위
-
+(ex29)
       정렬
-      justify-content:
+        justify-content:
         flex-start : 왼쪽 정렬 (기본값)
         flex-end : 오른쪽 정렬해준다
         center : 가운데 정렬
 
-        공백 
+      공백 
         space-between : 요소 요소 가운데 공백을 균등 배분
         space-around : 요소 앞뒤에 공백을 균등하게 배분
         space-evenly : 요소 사이 공백 균등 배분
-
+(ex30)
+      flex-wrap
+        : nowrap - 줄 개행 x
+        : wrap - 줄 개행
+(ex31)
+      정렬(상하)
+      align-items
+        - stretch : (기본값)
+        - flex-start : 위쪽
+        - flex-end : 아래쪽
+        - center : 가운데
+(ex32)
+      flex-grow
+        : 비율 - 남아있는 여백을 배분하는 비율
 
