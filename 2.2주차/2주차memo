@@ -356,3 +356,8 @@ CSS
       column : 위 -> 아래
       column-reverse : 아래 -> 위
 
+      정렬
+      justify-content:
+        flex-start : 왼쪽 정렬
+        flex-end    : 오른쪽 정렬
+
