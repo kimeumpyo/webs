@@ -358,6 +358,13 @@ CSS
 
       정렬
       justify-content:
-        flex-start : 왼쪽 정렬
-        flex-end    : 오른쪽 정렬
+        flex-start : 왼쪽 정렬 (기본값)
+        flex-end : 오른쪽 정렬해준다
+        center : 가운데 정렬
+
+        공백 
+        space-between : 요소 요소 가운데 공백을 균등 배분
+        space-around : 요소 앞뒤에 공백을 균등하게 배분
+        space-evenly : 요소 사이 공백 균등 배분
+
 
