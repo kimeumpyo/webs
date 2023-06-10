@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    11. transition
+        - 전환시 지연 효과 : 애니메이션 효과
+        - transition-duration : 전환 효과 지연시간
+        - transition-property : 전환 효과 속성 예) width, height...
+        - transition-timing-function: 애니메이션 종류 : ease-in-out, linear
+        - transition-delay : 전환효과 발생전 대기 시간
+
+        단축 표기법
+        transition : 속성 지연시간 애니메이션 종류 대기시간
+
+        참고)
+          opacity : 투명도
+            0~1 : 0에 가까울 수록 투명해지고 1에 가까울 수록 불투명
+   -->
+  <style>
+    .box{
+      opacity: 0.3;
+      width: 100px;
+      height: 100px;
+      background-color: rgb(247, 0, 255);
+      transition-property: width, height;
+      transition-duration: 2s;/*크기변화에 2초가 걸린다*/
+      transition-timing-function: linear;/*속도가 일정하게 바뀐다*/
+      transition-property: all;
+      transition-delay: 3s; /*3초후에 반응한다*/
+    }
+    .box:hover{
+      opacity: 1;
+      width: 200px;
+      height: 200px;
+      transform: rotate(180deg); /*180도 회전*/
+    }
+    .box2{
+      width: 100px;
+      height: 100px;
+      background-color: greenyellow;
+      transition: all 2s;
+    }
+    .box2:hover{
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+  <div class="box"></div>
+  <div class="box2"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -208,11 +208,151 @@ CSS
       1) 줄 개행 X
       2) 너비, 높이 결정 X - 설정 불가 (공간 X)
       3) 외부 여백(margin) : 상하 X - 좌우 O
-
+(ex18)
   3. 레이아웃
+    box-sizing - 너비, 높이 기준
+      :content-box(기본값) - 내용물이 너비, 높이 기준
+      :border-box - 경계선이 너비, 높이 기준
+(ex19)
   4. 포지션
-  5. float
-  6. margin
-  7. padding
-  8. media query
-  9. 그래픽
+    position: 배치
+      정적 위치 
+        staitc - 기본값
+
+      상대적 위치 - 배치 기준
+        relative  : 기준 - 본인 요소의 위치 (외부여백O)
+        absolute  : 기준 (외부여백X)
+          - 1) HTML문서의 우측 상단
+(ex20)
+          - 2) 상위태그에 상대적 배치 속성이 설정
+            - 상위 태그가 기준
+            (relative, absolute, fixed)
+
+        fixed : 기준 - viewport(보이는 화면) 기준
+
+
+          참고) 음수는 반대방향!
+            top : 위 -> 아래
+            bottom : 아래 -> 위
+            left : 좌 -> 우
+            right : 우 -> 좌
+         
+(ex23)
+    5. float
+      - left : 좌 -> 우
+      - right : 우 -> 좌
+      참고)
+        clear : float 속성을 제거
+           left
+           right
+           both : left, right 모두 제거
+          
+          - 공간(block, inline-block)을 가진 요소에서만 적용 가능
+            참고) 
+              display: block
+                        inline    
+                        inline-block
+                        none -> 안보임속성 
+
+(ex21)
+    6. margin : 외부여백
+      - margin: 40px; -> 상하좌우 (40px)
+      - margin: 40px 20px; -> 상하(40px) 좌우(20px) 
+      - margin: 40px 20px 30px; -> 상(40px) 하(20px) 좌우(30px)
+      - margin: 40px 20px 30px 40px; -> 상(40px) 우(20px) 하(30px) 좌(10px)
+      
+      - margin-top : 상단 여백
+      - margin-bottom :  하단 여백
+      - margin-left : 좌측 여백
+      - margin-rigth : 우측 여백
+
+    7. padding : 내부여백
+      - padding: 40px; -> 상하좌우 (40px)
+      - padding: 40px 20px; -> 상하(40px) 좌우(20px) 
+      - padding: 40px 20px 30px; -> 상(40px) 하(20px) 좌우(30px)
+      - padding: 40px 20px 30px 10px; -> 상(40px) 우(20px) 하(30px) 좌(10px)
+      
+      - paddingn-top : 상단 내부 여백
+      - padding-bottom :  하단 내부 여백
+      - padding-left : 좌측 내부 여백
+      - padding-rigth : 우측 내부 여백
+
+(ex22)
+    7.1 border : 경계선
+      - border - width : 두깨
+      - border - style : solid 직선 dotted - 점선 dashed - 빼기
+      - border - color : 색상
+
+      - 단축 표기법
+        border : 두께 스타일 색상;
+
+      - border-top : 상단 경계선
+      - border-bottom : 하단 경계선
+      - border-left : 좌측 경계선
+      - border-rigth : 우측 경계선
+
+    7.2 border-radius : 경계선 둥글게
+
+(ex24)
+    8. media query
+      - 화면 사이즈 기준에 따라서 CSS 적용하는 기술
+
+      @media all and  (max-width: 기준너비){
+        // 기준너비 이하일 때 적용되는 CSS
+      }
+
+      @media all and (min-width: 기준너비){
+        // 기준너비 이상일 때 적용되는 CSS
+      }
+(ex25)
+    9. 그래픽
+      background
+        - background-color : 1) 색상명, 2)  rgb(0~255, 0~255, 0~255); rgbargb(0~255, 0~255, 0~255,3); hexcode: #ff0000 -> f00
+        - background-image : 이미지 배경
+                            url("이미지 경로");
+                  
+        - background-repeat : 이미지 반복
+                            repeat-x : 좌 - 우 반복
+                            repeat-y : 위 - 아래 반복
+                            on-repeat : 이미지 1개만 출력
+        - background-position : 이미지 배치
+                                100px 150px; -> 100px - 좌에서 우 100px, 150px - 위에서 아래로 150px
+                                배치 : left|center|right;
+                                배치 : top|center|bottom;
+
+        - background-size : 너비 높이
+                            비율
+                            cover -> 배경 크기에 따라 이미지 크기를 조정
+        단축 표기법
+        background : 색상 이미지 (url) 반복 위치;
+(ex26)
+    10. overflow              
+      내영물이 넘칠 떄 처리
+        - visible (기본값) - 넘치더라도 표시
+        - hidden : 넘치는 영역 감추기
+        - scroll : 스크롤바 생성(내용물이 넘치지 않아도 스크롤바 생성)
+        - auto : 내용물이 넘치지 않을때는 스크롤X, 넘칠때만 스크롤O
+(ex27)
+    11. transition
+        - 전환시 지연 효과 : 애니메이션 효과
+        - transition-duration : 전환 효과 지연시간
+        - transition-property : 전환 효과 속성 예) width, height...
+        - transition-timing-function: 애니메이션 종류 : ease-in-out, linear
+        - transition-delay : 전환효과 발생전 대기 시간
+
+        단축 표기법
+        transition : 속성 지연시간 애니메이션 종류 대기시간
+
+        참고)
+          opacity : 투명도
+            0~1 : 0에 가까울 수록 투명해지고 1에 가까울 수록 불투명
+(ex28)
+    12.flexbox
+      display:flex -> 적용된 자식 요소 배치
+
+      flex-direction : 배치 방향
+      row(기본값) : 좌 -> 우
+      row-reverse : 우 -> 좌
+      column : 위 -> 아래
+      column-reverse : 아래 -> 위
+

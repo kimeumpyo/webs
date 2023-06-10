@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    9. 그래픽
+      background
+        - background-color : 1) 색상명, 2)  rgb(0~255, 0~255, 0~255); rgbargb(0~255, 0~255, 0~255,3); hexcode: #ff0000 -> f00
+        - background-image : 이미지 배경
+                            url("이미지 경로");
+                  
+        - background-repeat : 이미지 반복
+                            repeat-x : 좌 - 우 반복
+                            repeat-y : 위 - 아래 반복
+                            on-repeat : 이미지 1개만 출력
+        - background-position : 이미지 배치
+                            100px 150px; -> 100px - 좌에서 우 100px, 150px - 위에서 아래로 150px
+                            배치 : left|center|right;
+                            배치 : top|center|bottom;
+
+        - background-size : 너비 높이
+                            비율
+                            cover -> 배경 크기에 따라 이미지 크기를 조정
+
+        단축 표기법
+        background : 색상 이미지 (url) 반복 위치;
+  </style>
+   -->
+  <style>
+    .bg{
+      width: 100%; 
+      height: 500px; 
+      border-bottom: 1px solid blue; 
+      background: url("images/logo.png");
+      background-repeat: no-repeat; 
+      background-position: center center; 
+      background-size: cover;
+    }
+    /*단축방법*/
+    .bg2{
+      background: url("images/logo.png") no-repeat center center;
+      width: 100%; 
+      height: 500px; 
+      border-bottom: 1px solid blue;
+    }
+  </style>
+  <div class="bg"></div>
+  <div class="bg2"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
