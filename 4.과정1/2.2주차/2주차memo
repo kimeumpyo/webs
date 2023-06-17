@@ -1,0 +1,383 @@
+CSS
+
+1.HTML에서 CSS를 적용하는 방법
+  1) 속성으로 적용
+    style 속성
+    style =  "속성명: 속성값; 속성명: 속성값;..."
+  
+  2) style 태그안에 적용
+    <style>
+    .. CSS 속성 -> 브라우저가 해석
+    선택자{
+      속성명 : 값
+      ...
+      속성명 : 값
+    }
+    </style>
+
+  3) 외부 파일로 적용
+    - 스타일 파일 확장자 : .css
+    - link
+      <link rel="stylesheet" type="text/css" href="파일 경로">
+
+    참고)
+      CSS에서 주석 - 설명
+      /* 설명...*/ - > 브라우저가 해석 X
+      1) 설명
+      2) 적용 배제
+
+2. 선택자
+  1) 태그 선택자
+    - 태그 이름으로 선택 -p, span, div, a ...
+    - 여러개를 선택 (여러개 적용 범위)
+  
+  2) 클래스 선택자 (class 속성)
+    - 마침표(.)
+      .클래스명
+    - 여러개를 선택
+    - 클래스명을 공백으로 구분해서 여러개 입력
+    - * : 모든 태그
+      - 공통 스타일(폰트 종류...)
+  3) 아이디 선택자(id 속성)
+    - #아이디명
+    - 한개만 선택
+    - 이름을 한개만 지정
+    
+(ex02)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  4) 선택자별 스타일 적용 우선순위
+    - 적용범위가 넓을 수록 우선순위가 낮고
+    - 적용범위가 좁을 수록 우선순위가 높다
+
+    태그(tag) < 클래스(class) < 아이디(id) < style 속성(직접입력)
+    
+    태그선택자.클래스명 : 태그에서 클래스명이 포함된 태그만 선택
+    (li.menu)
+    
+    태그선택자#아이디명
+
+    클래스선택자.클래스선택자
+      .menu.line
+    
+    아이디.클래스명
+    #menu4.menu
+
+    참고)
+    !important : 우선순위 강제 적용 - 남용X
+
+(ex03)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  5) 조상 자손 선택자 
+    조상 선택자... 자손 선택자
+
+  6) 부모 자식 선택자
+    부모 선택자 > 자식 선택자
+    (바로 위)     (바로 아래)
+
+(ex04)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  7) 그룹 선택자 
+    선택자, 선택자, ...{공통 스타일}
+  
+(ex05)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  8) 가상 클래스 선택자(:) 
+    - 상태로 선택
+      선택자  : hover (마우스 커서가 올라간 상태)
+      선택자  : checked (체크된 상태 선택)
+      선택자  : selected (select 태그에서 선택된 상태)
+      선택자  : read-only (읽기 전용 상태일때 선택)
+                - readonly (읽기 전용 상태)
+
+      선택자  : focus (요소 초점이 있는 상태)
+
+(ex06)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    - 조건, 위치
+      선택자 : not("제외할 선택자") 
+        - "제외할 선택자" 제외한 모든 선택자
+
+      선택자 : first-child - 첫번째 자식 요소를 선택
+      선택자 : last-child - 마지막 자식 요소를 선택
+      선택자 : nth-child(N) - N 번째 자식 요소를 선택(1부터 시작)
+      선택자 : nth-child(수식) - 수식 연산 결과의 요소를 선택
+
+              1,3,5,7,9...:2n+1
+
+              2,4,6,8,10...:2n
+
+      선택자 : first-of-type - 첫번째 요소를 선택
+      선택자 : last-of-type - 마지막 요소를 선택
+      선택자 : nth-of-type(N 또는 수식)
+
+(ex07)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    - 가상의 요소를 추가
+      선택자 : after
+        - 자식 요소에 마지막으로 추가
+
+      선택자 : before
+        - 자식 요소의 처음에 추가
+
+        - content: '내용' / 내용이 없응 경우라고 하더라도 content:"" 이렇게 입력
+
+(ex08)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+3. 결합자 
+  부모 자식 선택자 > (> : 결합자)
+  부모 > 자식
+
+  형제1 ~ 형제2 -> 형제1 오른쪽 모든 현제2
+  형제1 + 형제2 -> 형제1 오른쪽 바로 옆 형제2
+
+(ex09)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  참고)
+    선택자[속성명="속성 값"]{}
+
+속성
+  1. 폰트
+    font-size - 글자 크기
+      크기 단위
+        - 고정 크기
+          px(픽셀) : 화소 단위 1화소 1px (1980 * 1080)
+        
+        - 상대 크기 (기준 사이즈)
+
+(ex10)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+          - rem : 기준 - 가장 상위 태그(html)의 글자 사이즈 - 1rem
+          
+(ex11)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+          - em : 기준 - 부모 태그의 글자 사이즈 - 1em
+
+    color - 글자 색상
+      1) 색상명 지정
+        color:orange; color:red;
+      
+(ex12)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+      2) rgb(0~255, 0~255, 0~255) - (빨,초,파)
+        rgba(0~255, 0~255, 0~255, 0~1)
+        a : alpha 채널 - 투명도
+          0에 가까울 수록 투명, 1에 가까울 수록 불투명
+      
+      3) hex code
+        16진수
+        0~f
+
+        예 #FF 00 00
+            R  G  B
+        짧게도 가능
+          #F00
+(ex13)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    text-align : 좌, 우, 가운데 정렬
+      left -  기본값
+      right - 오른쪽
+      center - 가운데
+      justify - 양쪽 정렬(끝부분의 들쑥날쑥한걸 정렬해준다)
+
+    line-height: 행간
+      1.2 기본값
+      1 - 비율(100%)
+      2 - (200%)
+
+      특정 사이즈 명시 (50px)
+
+    letter-spacing : 자간
+
+    word-spacing : 단어 사이 간격
+    
+(ex14)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    font-family : 글꼴의 종류 설정
+      폰트 : "dotum"
+      폰트 : "Malgun Gothic" - MS 폰트
+
+    font-family: 폰트1, 폰트2, 폰트3...;
+      - 폰트1 없으면 폰트2 적용
+      - 폰트2 없으면 폰트3 적용...
+
+      - 웹폰트 : 구글 폰트 (https://fonts.google.com/)
+
+(ex15)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    font-weight : 글의 두께
+      normal : 기본값 (400)
+      bold : 두껍게(700)
+
+      범위 100~900 : 세밀하게 두께 설명 - 폰트에 따라서 지원 범위가 다르다
+
+(ex16)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  2. 공간
+    블록(Block) 레벨 태그 - 문단
+      1) 줄 개행
+      2) 너비, 높이 설정 가능
+      3) 외부 여백(margin) : 모든 방향 (상, 하 ,좌, 우)
+
+(ex17)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    인라인(Inline) 레벨 태그 -문장
+      1) 줄 개행 X
+      2) 너비, 높이 결정 X - 설정 불가 (공간 X)
+      3) 외부 여백(margin) : 상하 X - 좌우 O
+(ex18)
+  3. 레이아웃
+    box-sizing - 너비, 높이 기준
+      :content-box(기본값) - 내용물이 너비, 높이 기준
+      :border-box - 경계선이 너비, 높이 기준
+(ex19)
+  4. 포지션
+    position: 배치
+      정적 위치 
+        staitc - 기본값
+
+      상대적 위치 - 배치 기준
+        relative  : 기준 - 본인 요소의 위치 (외부여백O)
+        absolute  : 기준 (외부여백X)
+          - 1) HTML문서의 우측 상단
+(ex20)
+          - 2) 상위태그에 상대적 배치 속성이 설정
+            - 상위 태그가 기준
+            (relative, absolute, fixed)
+
+        fixed : 기준 - viewport(보이는 화면) 기준
+
+
+          참고) 음수는 반대방향!
+            top : 위 -> 아래
+            bottom : 아래 -> 위
+            left : 좌 -> 우
+            right : 우 -> 좌
+         
+(ex23)
+    5. float
+      - left : 좌 -> 우
+      - right : 우 -> 좌
+      참고)
+        clear : float 속성을 제거
+           left
+           right
+           both : left, right 모두 제거
+          
+          - 공간(block, inline-block)을 가진 요소에서만 적용 가능
+            참고) 
+              display: block
+                        inline    
+                        inline-block
+                        none -> 안보임속성 
+
+(ex21)
+    6. margin : 외부여백
+      - margin: 40px; -> 상하좌우 (40px)
+      - margin: 40px 20px; -> 상하(40px) 좌우(20px) 
+      - margin: 40px 20px 30px; -> 상(40px) 하(20px) 좌우(30px)
+      - margin: 40px 20px 30px 40px; -> 상(40px) 우(20px) 하(30px) 좌(10px)
+      
+      - margin-top : 상단 여백
+      - margin-bottom :  하단 여백
+      - margin-left : 좌측 여백
+      - margin-rigth : 우측 여백
+
+    7. padding : 내부여백
+      - padding: 40px; -> 상하좌우 (40px)
+      - padding: 40px 20px; -> 상하(40px) 좌우(20px) 
+      - padding: 40px 20px 30px; -> 상(40px) 하(20px) 좌우(30px)
+      - padding: 40px 20px 30px 10px; -> 상(40px) 우(20px) 하(30px) 좌(10px)
+      
+      - paddingn-top : 상단 내부 여백
+      - padding-bottom :  하단 내부 여백
+      - padding-left : 좌측 내부 여백
+      - padding-rigth : 우측 내부 여백
+
+(ex22)
+    7.1 border : 경계선
+      - border - width : 두깨
+      - border - style : solid 직선 dotted - 점선 dashed - 빼기
+      - border - color : 색상
+
+      - 단축 표기법
+        border : 두께 스타일 색상;
+
+      - border-top : 상단 경계선
+      - border-bottom : 하단 경계선
+      - border-left : 좌측 경계선
+      - border-rigth : 우측 경계선
+
+    7.2 border-radius : 경계선 둥글게
+
+(ex24)
+    8. media query
+      - 화면 사이즈 기준에 따라서 CSS 적용하는 기술
+
+      @media all and  (max-width: 기준너비){
+        // 기준너비 이하일 때 적용되는 CSS
+      }
+
+      @media all and (min-width: 기준너비){
+        // 기준너비 이상일 때 적용되는 CSS
+      }
+(ex25)
+    9. 그래픽
+      background
+        - background-color : 1) 색상명, 2)  rgb(0~255, 0~255, 0~255); rgbargb(0~255, 0~255, 0~255,3); hexcode: #ff0000 -> f00
+        - background-image : 이미지 배경
+                            url("이미지 경로");
+                  
+        - background-repeat : 이미지 반복
+                            repeat-x : 좌 - 우 반복
+                            repeat-y : 위 - 아래 반복
+                            on-repeat : 이미지 1개만 출력
+        - background-position : 이미지 배치
+                                100px 150px; -> 100px - 좌에서 우 100px, 150px - 위에서 아래로 150px
+                                배치 : left|center|right;
+                                배치 : top|center|bottom;
+
+        - background-size : 너비 높이
+                            비율
+                            cover -> 배경 크기에 따라 이미지 크기를 조정
+        단축 표기법
+        background : 색상 이미지 (url) 반복 위치;
+(ex26)
+    10. overflow              
+      내영물이 넘칠 떄 처리
+        - visible (기본값) - 넘치더라도 표시
+        - hidden : 넘치는 영역 감추기
+        - scroll : 스크롤바 생성(내용물이 넘치지 않아도 스크롤바 생성)
+        - auto : 내용물이 넘치지 않을때는 스크롤X, 넘칠때만 스크롤O
+(ex27)
+    11. transition
+        - 전환시 지연 효과 : 애니메이션 효과
+        - transition-duration : 전환 효과 지연시간
+        - transition-property : 전환 효과 속성 예) width, height...
+        - transition-timing-function: 애니메이션 종류 : ease-in-out, linear
+        - transition-delay : 전환효과 발생전 대기 시간
+
+        단축 표기법
+        transition : 속성 지연시간 애니메이션 종류 대기시간
+
+        참고)
+          opacity : 투명도
+            0~1 : 0에 가까울 수록 투명해지고 1에 가까울 수록 불투명
+(ex28)
+    12.flexbox
+      display:flex -> 적용된 자식 요소 배치
+
+      flex-direction : 배치 방향
+      row(기본값) : 좌 -> 우
+      row-reverse : 우 -> 좌
+      column : 위 -> 아래
+      column-reverse : 아래 -> 위
+(ex29)
+      정렬
+        justify-content:
+        flex-start : 왼쪽 정렬 (기본값)
+        flex-end : 오른쪽 정렬해준다
+        center : 가운데 정렬
+
+      공백 
+        space-between : 요소 요소 가운데 공백을 균등 배분
+        space-around : 요소 앞뒤에 공백을 균등하게 배분
+        space-evenly : 요소 사이 공백 균등 배분
+(ex30)
+      flex-wrap
+        : nowrap - 줄 개행 x
+        : wrap - 줄 개행
+(ex31)
+      정렬(상하)
+      align-items
+        - stretch : (기본값)
+        - flex-start : 위쪽
+        - flex-end : 아래쪽
+        - center : 가운데
+(ex32)
+      flex-grow
+        : 비율 - 남아있는 여백을 배분하는 비율
+

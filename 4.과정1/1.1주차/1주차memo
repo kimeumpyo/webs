@@ -1,0 +1,280 @@
+0. 이용교 / 010 - 3481 - 2101
+https://github.com/yonggyo1125
+
+1. 개발환경 설치 및 설정
+
+2. HTML - HTML 문서의 일종
+
+
+    1)태그
+        - <태그명> 내용물 </태그명>
+        - <태그명/> : 단일 태그(내용이 없는 태그)
+            -> /생략 가능-> <태그명>
+            <meta .../> -> <meta>
+        여는 태그       닫는 태그
+
+    2) 확장자.html
+    3) <!DOCTYPE html> ->   HTML 버전을 알려주는 역할
+                            HTML5 버전
+
+    4) body - 화면에 보이는 영역 태그로 구성
+    5) head - 화면에 보이지 않는 영역 구성
+            - 브라우저 탭 제목
+            - 웹페이지 자원(css파일, js파일)
+
+3. 속성
+    - 태그에 있는 부가적인 정보
+    - 속성명 = "값"
+    - a태그 : 하이퍼링크 태그 -> 페이지 이동
+    - 태그 자체의 기능에서 참고하는 정보로써의 속성
+    <a href= "주소">...</a>
+
+    <img src="이미지 경로">
+        - src : 이미지 경로
+        - width : 너비
+        - height : 높이
+        - alt : 대체 문구
+
+        태그
+            - 헤더 태그 - 제목
+            <h1~6>제목<h1~6>
+
+            주제목 ... 부제목
+            문단 태그 (p - Paragraph 태그)
+
+            주석 -> 설명
+            <!-- 설명 --> : 브라우저가 해석 x -> 출력
+                            : 다릉 태그를 출력 배제
+
+            <!-- 작업 영역...S -->
+
+            <!-- 작업 영역...E -->
+
+            하이퍼링크 태그
+
+            a : 페이지 이동
+                href="이동할 페이지"
+
+                target: 페이지가 보일 창에대한 정보
+                    - _self : -a태그가 있는 창(기본값)
+                    - _blank : 새로운창에서 출력
+                    - _parent : 부모창에서 출력
+                    - _top : 가장 위쪽에 있는 창에서 출력
+
+                    -> 부모 -> 자식
+                    - 자식창의 이름(name 속성)
+
+                    참고) iframe 태그 -> HTML문서에 추가할 수 있는 브라우저
+                            - src="주소"
+                            - width="너비"
+                            - heigth="높이"
+                            - frameborder: 경계선
+                                         :0 -> 경게선 제거
+                            - scrolling : auto - 기본값 : 자동
+                                            no  : 스크롤바 감춤
+                                            yes : 항상 스크롤바 노출
+
+                            br: 줄개행 태그
+                            <br/>
+
+
+                    참고)
+                        웹페이지가 보이는 화면 -> 창(window)
+
+    경로
+        - 절대결로
+            file:\\\C:\Users\Administrator\Desktop\web(주말)\1. 1주차\html_study\logo.png -> 절대경로
+                - 변경시 유연함이 떨어진다...
+
+        - 상대경로
+            상대적 -> 비교 -> 비교를 위한 기준
+
+            예) ../images/logo.png 1칸위의 images폴더 안의 logo.png 파일
+
+        . 현재 파일이 열려 있는 경로
+        .. 현재 파일이 열리 있는 경로에서 1단계 위 경로
+
+    테이블 태그(table)
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>항복명1</th>
+                    <th>항복명2</th>
+                    <th>항복명3</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>내용</td>
+                    <td>내용</td>
+                    <td>내용</td>
+                </tr>
+            </tbody>
+
+            <tfood>
+                <tr>
+                    <td>내용</td>
+                    <td>내용</td>
+                    <td>내용</td>
+                </tr>
+            </tfood>
+        </table>
+
+        - border : 경계선, 값 -경계선 두께
+        - width : 테이블 너비
+
+        th, td
+            행 병합 : rowspan
+            열 병합 : colspan
+            수평정렬 : align - left(왼쪽)   | center(가운데)    | rigth(오른쪽)
+            수직정렬 : valign - top(위)     | -middle(가운데)   | -bottom(아래)
+
+    리스트 태그
+        ul - Unordered List : 순서 표기가 없는 목록
+            li
+
+            sytle에서 list-style-type
+                : disc - 채워진 둥근 원(기본값)
+                : circle - 테두리만 있는 둥근 원
+                : square - 사각형
+                : none - 없음
+
+        ol - Ordered List : 순서 표기가 있는 목록
+            li
+
+            - type 속성 : 순서 표기법
+                - 1 : 숫자
+                - A : 대묹나 알파벳  순서
+                - a : 소문자 알파벳 순서
+                - i : 로마자
+                - I : 로마자
+
+    설명 리스트
+        dl(Description List)
+            dt : 설명 항목
+            dd : 설명 내용
+
+        HTML Block 요소
+            - 문단
+            - 일정 공간 차지 - 너비, 높이 지정
+            - 외부 여백(모든 방향 설정 가능) - margin
+            - 내부 여백(모든 방향 설정 가능) - padding
+            - 줄 개행
+            - p, div
+
+        HTML Inline 요소
+            - 글
+            - 공간을 결정 x -> 글은 너비에 따라서 늘어나거나 줄어들어들기 떄문
+            - 너비, 높이 지정 x
+            - 외부 여백(좌우 여백만 설정 가능) - margin
+            - 내부 여백(모든 방향 설정 가능) - padding
+            - 줄 개행 
+            - a, span
+
+    선택을 위한 속성
+        - class
+        - id / 아이디 - 한개만 선택
+
+            class = 'blind'
+
+    스타일 - CSS 스타일 적용 태그
+        <style> ~ </style>
+
+        자바스크립트 - <style> ~ </style> 해석 -> 실행
+
+    시맨틱 태그 - 의미가 있는 태그  
+        - 태그명만 봐도 어떤 용도인지 알수 있는 태그    
+
+        table - 표
+        ul
+        li
+        <header>
+        <nav>
+        <section>
+        <article>
+        <aside>
+
+    양식 태그
+        from
+
+        <from>
+        입력내용
+            <input>...
+        </from>
+
+        input
+            type = "text" : 한줄 텍스트
+            type = "password" : 비밀번호 형식
+            type = 'radio' : 여러개 중에서 한개 선택 : 라디오버튼
+            type = 'checkbox' : 여러개 중에서 여러개 선택 : 체크박스
+                취미, 동의 등
+                    - checked : 체크된 상태 변경
+                label 태그와 함께 자주 쓰인다.
+                    1) label 태그로 input 태그를 감싸면 label태그를 클릭하면 input 태그가 체크
+                    2) label for와 input id를 동일하게 지정
+                    
+            type = 'number' : 숫자만 입력
+                min - 최소 값
+                max - 최대 값
+                step - 증감 단위
+
+            type = 'email' : 이메일 형식만 입력 -> 제출시에 형식 체크
+            type = 'date' : 날짜 입력 - 달력 노출
+            type = 'range' : 범위 선택
+                min - 최소 값
+                max - 최대 값
+                step - 증감 단위
+            type = 'hidden' : 노출x, 제출처에 데이터 전달용 목적으로만 사용할 때
+
+            type = 'submit': 양식 제출 버튼
+            type = "reset" : 입력값 초기화
+                - value : 버튼명
+
+            참고)
+                button
+                    type - submit : 제출 버튼
+                         - reset : 초기화 버튼
+                         - button :  일반 버튼
+            
+        member_type=on
+        (데이터이름)  = (값)
+            name : 데이터 이름
+
+            value : 값
+                - 입력 항목 (text, password ...): 입력한 값이 value
+            
+            placeholder : 안내문구
+                - 입력하기전에 띄워주는 문구
+
+            textarea : 여러줄 입력
+                - 자기소개
+                - rows : 노출 되는 행의 갯수
+                - cols : 노출 되는 열의 갯수
+
+            select -  여러개 중에서 한개(option) 선택
+                - multiple : 여러개 선택 (ctrl + 클릭)
+                - size : 노출될 갯수
+                - selected
+                option
+                    value
+
+            required 속성
+                - 필수 입력 항목
+
+        from
+            action : 제출할 경로(서버쪽 경로)
+            method : 제출 방식(GET, POST)
+                - GET
+                    - 서버쪽 자원 조회
+                    - 조회를 위한 데이터
+                
+                - POST
+                    - 작성하다
+                    - 서버쪽에 기록을 위한 용도
+                    - content-type : application/x-www-form-urlencoded
+                    - 요청 body
+
+

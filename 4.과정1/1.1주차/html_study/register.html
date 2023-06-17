@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>회원가입</title>
+</head>
+
+<body>
+  <form method="POST" action="register_ps.html">
+    <input type="hidden" name="mode" value="join">
+    <dl>
+      <dt>가입구분</dt>
+      <dd>
+        <!-- radio 선택부분을 만들어준다 -->
+        <!-- 같은 name값을 주면 중복선택이 불가능하다 -->
+        <!-- http://127.0.0.1:5500/1.1%EC%A3%BC%EC%B0%A8/html_study/register.html?
+          type=private&userId=user01&userPw=123456&userPwRe=123456&userNm=%EC%82%AC%EC%9A%A9%EC%9E%90 -->
+        <!-- 제출을하면 주소창에 name값을 확인가능하다 -->
+        <!-- checked 개인회원쪽에 체크가 되어있는 상태에서 시작된다 -->
+        <label>
+          <input type="radio" name="type" value="private" checked>개인회원
+        </label>
+        <label>
+          <input type="radio" name="type" value="business">사업자회원
+        </label>
+      </dd>
+    </dl>
+    <dl>
+      <dt>아이디</dt>
+      <dd>
+        <!-- required 필수 입력 항목! -->
+        <input type="text" name="userId" value="user01" required>
+      </dd>
+    </dl>
+    <dl>
+      <dt>비밀번호</dt>
+      <dd>
+        <input type="password" name="userPw" required placeholder="비밀번호는 8자리 이상 입력하세요...">
+      </dd>
+    </dl>
+    <dl>
+      <dt>비밀번호 확인</dt>
+      <dd>
+        <input type="password" name="userPwRe" required>
+      </dd>
+    </dl>
+    <dl>
+      <dt>회원명</dt>
+      <dd>
+        <input type="text" name="userNm" required>
+      </dd>
+    </dl>
+    <dl>
+      <dt>취미</dt>
+      <dd>
+        <!-- 체크받스는 라이도와 다르게 동일한 이름의 항복을 복수선택이 가능하다 -->
+        <!-- input의 id와 label의 for이름이 동일할시 텍스트 클릭시 체크박스가 작용한다 -->
+        <input type="checkbox" name="hoddy" value="독서" id="hobby1">
+        <label for="hobby1">독서</label>
+
+        <input type="checkbox" name="hoddy" value="수영" id="hobby2">
+        <label for="hobby2">수영</label>
+
+        <input type="checkbox" name="hoddy" value="피아노" id="hobby3">
+        <label for="hobby3">피아노</label>
+      </dd>
+    </dl>
+    <dl>
+      <dt>자기소개</dt>
+      <dd>
+        <textarea name="introduction" id="" cols="50" rows="10"></textarea>
+      </dd>
+    </dl>
+    <dl>
+      <dt>나이</dt>
+      <dd>
+        <!-- 최소값0 최대값 100 단위10 -->
+        <input type="number" name="age" min="0" max="100" step="10">
+        <input type="range" name="age2" min="0" max="100">
+      </dd>
+    </dl>
+    <dl>
+      <dt>생년월일</dt>
+      <dd>
+        <input type="date" name="birthDt">
+      </dd>
+    </dl>
+    <dl>
+      <dt>이메일</dt>
+      <dd>
+        <input type="text" name="email">
+        @
+        <!-- multiple 여러개 선택이 가능 ctrl + 클릭 -->
+        <select name="domain">
+          <option value="naver.com">naver.com</option>
+          <option value="daum.net">daum.net</option>
+          <option value="gmail.com">gmail.com</option>
+          <option value selected>직접입력</option>
+        </select>
+      </dd>
+    </dl>
+    <!-- <input type="reset" value="다시입력"> -->
+    <!-- <input type="submit" value="가입하기"> -->
+    <!-- 위 input 형식과 동일 -->
+    <button type="reset">다시입력</button>
+    <button type="submit">가입하기</button>
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .box{width: 100px; height: 100px;}
+    .box1{background-color: rgb(252, 245, 153); position: absolute; top: 100px; left: 100px;}
+    /*상위태그에 상대적 배치 속성이 설정 warp안에 box 가 들어온다*/
+    .warp{position: relative; width: 800px; height: 5000px; border: 1px solid rgb(193, 193, 250); margin: 200px;}
+    /*화면 기준으로 위치가 고정된다*/
+    .box2{background-color: rgb(139, 139, 238); position: fixed; bottom: 100px; right: 100px;}
+  </style>
+  <div class="warp">
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+  </div>
+</body>
+</html>
