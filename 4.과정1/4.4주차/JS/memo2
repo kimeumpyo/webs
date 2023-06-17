@@ -71,6 +71,7 @@
 
 4. in 연산자로 프로퍼티가 있는지 확인하기
   - 객체 안에 속성명이 존재 하는지 체크
+
   예) 'age' in person
 
   - for문과 함께 사용
@@ -108,6 +109,7 @@
 
   변수 : 객체에 접근할 수 있는 주소를 가지고 있다
     -> 참조 변수
+
       예) 
       var person(=>주소) = {
         age(=>객체) : 40,
@@ -134,6 +136,7 @@
 
 2. 함수 호출
   함수명(...);
+
   예)
   function add(num1, num2){
     var result = num1 + num2;
@@ -178,6 +181,7 @@
     1) 함수가 값으로 사용 가능 - 함수 객체
       - 매개변수
       - 반환값 - 클로저
+
         예) 클로저
         function outer(num1){
 
@@ -204,6 +208,7 @@
       참고)
         - 함수  : 실행문 : 자바, C
               : 표현문 -> 번역 -> 실행 가능한 형태 변경
+
         예1)
         function add(=> 변수명처럼 사용)(num1, num2){
           var result = num1 + num2;
@@ -273,20 +278,24 @@
       - 함수 객체 -> 번역 -> EC(Execution Context)객체 ->실행(스택)
         
         예)
-        var num0 = 5;
+        var num0 = 5; -> Global EC
+
         function  outer(){
-          var num1 = 10;
+          var num1 = 10; -> outer EC
 
           function inner(){
-            var num2 = 20;
+            // var num1 = 25;
+            var num2 = 20; -> inner EC
 
             return num0 + num1 + num2;
           }
           var result = inner();
           console.log(result);
+          console.dir(result);
         }
+
         outer();
-        => 30
+        => 35
 
         //////////////
 
@@ -323,20 +332,126 @@
 
         /////////////
 
-        var a = 10;
-        window.a;
-        => 10
-        a;
-        => 10
+        function add(num1, num2){
+          console.log(this)
+          return num1 + num2;
+        }
+        => this -> window
 
-        ////////////
+        /////////////
         
+        var person = {
+          age : 40,
+          name : "아이유",
+          showInfo : function(){
+            console.log(this);
+            console.log(this.age, this.name)
+          }
+        }
+
+        person.showInfo();
+        => {age: 40, name: '아이유', showInfo: ƒ}
+        => 40 '아이유'
+
+        var showInfo = person.showInfo;
+        showInfo();
+        => Window
+
 변수의 유효범위
 1. 전역 유효 범위와 지역 유효범위
 2. 변수의 충돌
 3. 함수 안에서 변수 선언과 변수 끌어올림
 4. 함수 안에서 변수 선언 생략
+  
+  var a = 10;
+  delete window.a;
+  => false
+
+  a = 10;
+  delete window.a;
+  => true
+
 5. 블록 유효 범위 : let과 const
+  var - 유효범위 : 함수 지역 범위
+  var 변수 선언자 있다 하더라도 동일한 변수를 정의면 기존 값이 변경
+  ES6+ 버전에서 추가된것들
+  - 유효범위 - {...}
+  - 중복 정의 X
+  let : 변수 선언자
+  const : 상수 선언자
+
+  변수 선언을 const로 하고 변경이 필요할때만 let사용  
+
+  참고)
+    문자, 숫자, 논리값, undefined제외 전부 객체
+
+    예)
+    const person = {
+      age : 40,
+      name : "아이유"
+    };
+
+    person.age = 50;
+
+    person;
+
+    person = 50; -> X
+
 6. 함수 리터럴로 함수 정의하기
+  var add = function(...){
+
+  }
+
 7. 객체의 메서드
-8. 즉시 실행 함수
+  - 객체 안에 정의된 함수 객체 -> 메서드
+  - 단축 표기법 가능
+
+  예)
+  const person = {
+    age : 40,
+    name : "아이유",
+    showInfo(){
+      console.log(this.age, this.name);
+    }
+  }
+  person.showInfo();
+  => 40 '아이유'
+8. 매개변수로 함수
+  - 용도가 특정 함수 안에서만 사용됨
+  - 익명함수로 주로 사용
+
+    예)
+    const fruits = ["Apple","Orange","Mango"];
+
+    fruits.forEach(function(fruit){
+      console.log(fruit)
+    });
+
+    fruits.forEach(s => console.log(s));
+
+  - ES6 -> 화살표 함수(짧게 사용하기 위해서)
+
+    예)
+    function add1(num1, num2){
+      return num1 + num2;
+    }
+    add1(10,20)
+    => 30
+
+    const add2 = (num1, num2) => {
+      return num1 + num2;
+    }
+    add2(10,20)
+    => 30
+
+    // return 은 생량이 가능하다
+    const add2 = (num1, num2) => num1 + num2;
+    add2(10,20)
+    => 30
+
+9. 즉시 실행 함수
+10. 가변길이 인수 목록(Arguments 객체)
+11. 생성자
+
+내장 객체
+1. 
