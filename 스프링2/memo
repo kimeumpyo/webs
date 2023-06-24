@@ -448,20 +448,34 @@
                 -> new Array(값1, 값2, 값3...)
               - [속성명 - 숫자]
 
-              - 배열 객체의 요소 추가
+              - 배열 객체의 요소 추가 ex10)
                 .push(...items) : 끝에 추가
                 .unshift(...items) : 앞에 추가
 
-              - 배열 객체의 요소 삭제
+              - 배열 객체의 요소 삭제 ex10)
                 .pop() : 끝에 있는 요소 1개 삭제
                 .shift() : 앞에 있는 요소 1개 삭제
 
-              - 중간에 제거, 추가
+              - 중간에 제거, 추가 ex11) 
                 .splice
 
               - Symbol.iterator  ex13)
-                .next() : 다음요소
+                .next() : 다음 요소를 순서대로 가져오는 메서드
 
+                  for ... of 구문
+
+              Date ex17)
+                - 객체 생성 : 현재 시점의 날짜와 시간 객체
+
+                참고) 
+                  java.util.Date JDK1.0
+                    java.util.Calendar JDK1.1
+
+                  java.time 패키지 JDK8
+                  (Date/Time API)
+
+              Error : 에러 생성자 객체
+                try ~ catch
 
         ex1)
         const num1 = "1000";
@@ -635,27 +649,154 @@
           console.log(fruit);
          }
 
+        ex15)
+        const str = new String("ABC");
+        console.dir(str);
+        => String0: "A"1: "B"2: "C"length: 3[[Prototype]]: String[[PrimitiveValue]]: "ABC"
 
+        ex16)
+        const str  = "ABCDEFG"
+        
+        for(const ch of str){
+          console.log(ch);
+        }
+        => 
 
+        ex17)
+        const date = new Date();
+        date;
+        => Sat Jun 24 2023 16:14:25 GMT+0900 (한국 표준시)
 
+        const str = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`; 
 
+        str;
+        => '2023-5-24 16:17:55'
 
+        ex18)
+        const date = new Date();
+        date.setDate(date.getDate() - 7); // 7일전
+        date;
+        => Sat Jun 17 2023 16:19:29 GMT+0900 (한국 표준시)
 
+        ex19)
+        let str;
 
+        str.toUpperCase();
+        => 에러문구
 
+        try{
+          str.toUpperCase();
+        }catch(err){
+          console.log(err);
+          console.log("에러 처리!")
+        }
+        ex20)
 
+        try{
+          throw new Error("에러 발생!!!")
+          consoel.log("실행코드!")
+        }catch(err){
+          alert(err.massage);
+        }
 
-
-
-
-
-
-
+        
     - 내장 객체
+      JSON
+        - javaScript Object Notation
+        - 자바스크립트 객체 형식의 문자열
+
+        JSON 문자열 -> 자바스크립트 객체 변환
+          parse(JSON 문자열)
+
+        자바스크립트 객체 -> JSON 문자열 변환
+          stringify(자바스크립트 객체)
+      
+          ex1)
+          const person = {
+            name : "아이유", 
+            age : 31
+          };
+
+          const jsonStr = JSON.stringify(person);
+
+          jsonStr;
+          =>'{"name":"아이유","age":31}'
+
+          typeof jsonStr;
+          =>'string'
+
+          const person2 = JSON.parse(jsonStr);
+
+          person2;
+          => {name: '아이유', age: 31}
+
+      Math 
+        - 수학 관련 편의 기능 객체
+        - abs() : 절대값, 음수 -> 양수
+        - sign(...) : 부호, 음수 -1, 양수 1, 0
+        - round(...) : 반올림
+        - ceil(...) : 올림
+        - floor(...) : 반올림
+
+          ex1)
+          Math.abs(-10);
+          => 10
+
+          Math.sign(-10);
+          => -1
+
+          Math.sign(10);
+          => 1
+
+          Math.round(10.5)
+          => 11
+
+          Math.ceil(10.2)
+          => 11
+
+          Math.floor(10.2) 
+          => 10
+
 
   - 호스트 객체
     - 자바스크립트 실행환경에 특화되어 있는 객체
     - 웹브라우저 객체
+      window
+        - 창마다 다른 window 객체 존재
+        - location : 브라우저의 주소창과 관련된 객체
+        - history : 브라우저의 방문 기록과 관련된 객체
+        - screen : 
+        - navigator :
+        - document : 
+
+      ex)
+      검사 -> 네트워크 -> 새로고침 -> www.naver.com -> 응답
+    - 1)서버 응답 -> HTML 문자열 전송 -> 브라우저 인식 X -> 브라우저가 인식할 수 있는 객체 형태로 변환 (document 객체로 변환)
+    - 2) HTML 문자열 전송
+    - 3) 브라우저 인식할 수 있는 객체 형태로 변환 (document 객체로 변환)-> 연산 시간이 소요
+    - 4) HTML 텍스트 ->document 객체 변환 완료, document 객체를 트리구조로 편성(DOMTree) -> DOMContentLoaded 이벤트 발생
+    - 5) 외부 자원등(CSS, JS, 이미지, 비디오 등등 )로드 완료 -> load 이벤트 발생
+
+        DOM(Document Object Model)
+
+    자바스크립트에서 특정 요소에 이벤트 부여 / 부여전에 요소를 찾아서 선택
+      - 검색에 최적화된 구조 : 이진트리 구조
+
+    - 컴포지트 패턴
+      - UI에 특화된 패턴
+      
+    window.addEventListener("DOMContentLoaded", function(){
+
+    })
+
+    ES6+
+      defer : DOMContentLoaded 이벤트 발생 이후에 실행
+      async : 비동기
+
+
+      
+  
+
 
     
 

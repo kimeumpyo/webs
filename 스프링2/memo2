@@ -22,4 +22,17 @@ Array.prototype.forEach()
 Array.prototype[@@iterator]()
 
 
+///////////////////////////////////
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#description
+Date.prototype.getDate()
+Date.prototype.getDay()
+Date.prototype.getFullYear()
+Date.prototype.getHours()
+Date.prototype.getMinutes()
+Date.prototype.getMonth()
+Date.prototype.getSeconds()
+Date.prototype.getTime()
+Date.prototype.setDate() 등등
+
+
 
