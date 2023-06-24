@@ -1,0 +1,79 @@
+예) 
+    const num0 = 10;
+
+    function outer(){
+      const num1 = 20;
+
+      function inner(){
+        const num1 = 15; // 본인꺼 먼저 사용한후 참조한다
+        const num2 = 30; 
+
+        return num0 + num1 + num2
+      }
+
+      const result  = inner();
+      console.log(result);
+    }
+
+    outer();
+    => 60
+
+global EC(Execution Context){
+    변수 레코드{
+        window.num0 = 10
+    }
+
+    외부 EC 변수 레코드 참조 : null
+
+    this 바인딩 : window
+}
+
+outer EC(Execution Context){
+    변수 레코드{
+        num1 : 20
+    }
+    외부 EC 변수 레코드 참조 : globla EC 변수 레코드 참조
+
+    this 바인딩 : 호출한 객체의 주소
+}
+
+inner EC(Excution Context){
+    변수 레코드 {
+        num2 : 30
+    }
+
+    외부 EC 변수 레코드 참조 : outer EC 변수 레코드 참조
+
+    this 바인딩 : 호출한 객체의 주소 
+}
+
+예)
+function add(num1, num2){
+    console.log(this); // window
+    return num1 + num2;
+}
+
+add(10, 20);
+=> 30
+
+window.add(10, 20);
+=> 30
+
+예) 
+const person = {
+    name : "아이유",
+    age : 40,
+    showInfo : function(){
+        console.log(this);
+        console.log(this.name, this.age);
+    }
+}
+person.showInfo();
+=> {name: '아이유', age: 40, showInfo: ƒ}
+=> 아이유 40
+
+var showInfo = person.showInfo;
+
+showInfo();
+
+window.showInfo();

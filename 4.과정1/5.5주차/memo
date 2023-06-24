@@ -1,0 +1,125 @@
+함수
+1. 즉시 실행 함수
+  - 함수를 정의하자마자 바로 실행
+
+  ex)
+  (function () {
+    // 실행 코드
+  })();
+
+  ex)
+  (function () {
+    console.log("즉시 실행!");
+  })();
+      => 즉시 실행!
+
+  ex)
+  const result = (function (num1, num2) {
+    return num1 + num2;
+  })(10, 20);
+
+  result;
+  => 30
+
+
+
+  - 매개변수 사용 가능
+  - 반환값도 사용 가능
+
+2. 가변길이 인수 목록(Arguments 객체)
+  모든 함수에 arguments 지역변수가 존재
+    - 입력한 모든 매개변수의 값
+    참고) 
+      자바스크립트에서 함수의 매개변수는 유동적이다
+        - 갯수가 정확하지 않아도 오류 X
+
+        ...연산자 : 전개 연산자
+
+      ex)
+      function add(num1, num2){
+        console.log(num1, num2, arguments);
+      }
+      add(10);
+      => 10 undefined
+
+      add(10, 20, 30, 40);
+      => 10 20 Arguments(4) [10, 20, 30, 40,]
+
+      ex)
+      function add(){
+        let total = 0;
+        for (let i = 0; i < arguments.length; i++){
+          total += arguments[i];
+        }
+
+        return total;
+      }
+
+      add(10, 20, 30);
+
+      ex) 가변
+      function add(...nums){
+        console.log(nums);
+      }
+      add(10);
+      => [10]
+
+      add(10, 20, 30, 40);
+      => (4) [10, 20, 30, 40]
+
+      ex) 
+      function add(num0, ...nums){
+        console.log(num0, nums);
+        let total = 0;
+        for (let i = 0; i <nums.length; i++){
+          total += nums[i];
+        }
+        return total;
+      }
+
+      add(10, 20, 30, 40, 50);
+      => 10 (4) [20, 30, 40, 50] // 10만 따로 빠져있다!
+
+      ex) 전개 연산자
+      const obj1 = {c : 3, d : 4};
+      const obj2 = {e : 5, f : 6, ...obj1};
+
+      obj2;
+      => {e: 5, f: 6, c: 3, d: 4}
+
+      ex) 전개 연산자
+       const obj1 = {c : 3, d : 4};
+       const obj2 = {...obj1};
+
+       obj1 === obj2
+       => false
+
+      ex) 
+      function add(num1, num2){
+        num2 = num2 || 10;
+        return num1 + num2;
+      }
+      add(20);
+      => 30
+
+      ex)
+      function add(num1, num2 = 10){
+        
+        return num1 + num2;
+      }
+      add(20);
+      => 30
+
+3. 생성자
+  참고)
+    자바스크립트 함수 : 1급 객체
+      1) 함수는 객체 - 함수는 값으로 사용 가능
+        - 매개변수, 변환값
+      2) 다른 객체를 만들어주는 객체 - 생성자 함수 객체
+
+  자바스크립트의 상속
+
+내장 객체
+1. 내장 생성자
+2. 내장 객체
+
