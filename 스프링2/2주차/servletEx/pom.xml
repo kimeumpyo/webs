@@ -9,7 +9,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>20</maven.compiler.source>
-    <maven.comriler.target>20</maven.comriler.target>
+    <maven.compiler.target>20</maven.compiler.target>
   </properties>
   <dependencies>
     <dependency>
@@ -20,3 +20,4 @@
     </dependency>
   </dependencies>
 </project>
+
