@@ -1,6 +1,2 @@
 0. 이용교 / 010 - 3481 - 2101
 https://github.com/yonggyo1125
-
-1. 개발환경 설치 및 설정
-
-2. HTML

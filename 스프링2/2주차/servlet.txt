@@ -1,0 +1,52 @@
+서블릿(Servlet)
+
+1. 서블릿(Servlet)의 개요
+  - 자바의 웹 기술
+
+  참고)
+    servlet 4 -> javaee 8
+    servlet 5,6 -> jakartaee 9 ~ 10 : jakarta..
+
+    spring5 - java 8
+      spring webmvc - javaee8
+      springboot 2.x
+      tomcat 9
+
+
+    spring6  - java 17
+      spring webmvc - jakartaee 9
+      springboot 3.x
+      tomcat10
+
+인텔리J 설치 (무료버전)
+https://www.jetbrains.com/ko-kr/idea/download/?section=windows
+
+tomcat10 설치
+https://tomcat.apache.org/download-10.cgi
+64-bit Windows zip (pgp, sha512) 버전
+
+즐겨찾기
+https://tomcat.apache.org/tomcat-10.0-doc/index.html
+https://jakarta.ee/specifications/servlet/5.0/apidocs/
+
+
+2. 서블릿(Servlet)클래스 작성하기
+  jakarta.servlet-api
+
+  - API(application Programming Interface) : 애플리케이션 개발 관련 설계 틀
+    - 인터페이스, 추상 클래스
+
+  - 실제 구현 클래스 : WAS(Web application Service)가 제공 - Tomcat10
+
+  - mvnrepository -> https://mvnrepository.com/
+  
+
+  - 서블릿 클래스를 작성할 때 지켜야할 규칙
+      1).HttpServlet 클래스를 상속
+      2) 서블릿 클래스는 public으로 만들어야 합니다.
+        - 웹 컨테이너가 서블릿 객체를 만들 때 이 접근 권한이 필요하기 때문입니다.
+
+3. web.xml 파일에 서블릿( Servlet )등록하기
+  - XML문법
+
+4. 웹 브라우저로부터 데이터 입력 받기
