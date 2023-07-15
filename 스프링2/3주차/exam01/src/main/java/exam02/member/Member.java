@@ -2,7 +2,7 @@ package exam02.member;
 
 import java.time.LocalDateTime;
 
-public class Member{
+public class Member {
     private String userId; // 회원 아이디
     private String userPw; // 비밀번호
     private String userNm; // 회원명
