@@ -3,7 +3,7 @@ package exam02.member;
 import java.util.List;
 
 public class MemberListService {
-    private MemberDao memberDao = new MemberDao();
+    private MemberDao memberDao = new CachedMemberDao();
 
     public void print() {
         List<Member> members = memberDao.gets();

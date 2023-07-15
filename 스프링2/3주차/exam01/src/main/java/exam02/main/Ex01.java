@@ -2,6 +2,7 @@ package exam02.main;
 
 import exam02.member.JoinService;
 import exam02.member.Member;
+import exam02.member.MemberListService;
 
 import java.time.LocalDateTime;
 
@@ -15,5 +16,9 @@ public class Ex01 {
         member.setRegDt(LocalDateTime.now());
 
         joinService.join(member);
+
+
+        MemberListService listService = new MemberListService();
+        listService.print();
     }
 }
