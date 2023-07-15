@@ -1,8 +1,12 @@
-package exam04.member;
+package exam03.member;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class JoinService {
-
+    @Autowired // 필요한 객체를 알아서 주입해준다
     private MemberDao memberDao;
+
+    public JoinService(){};
 
     public JoinService(MemberDao memberDao){
         this.memberDao = memberDao;

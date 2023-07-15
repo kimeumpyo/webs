@@ -1,4 +1,4 @@
-package exam04.member;
+package exam03.member;
 
 import java.util.ArrayList;
 import java.util.HashMap;
