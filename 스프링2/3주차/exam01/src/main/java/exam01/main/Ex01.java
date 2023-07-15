@@ -5,6 +5,7 @@ import exam01.config.AppCtx;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Ex01 {
+    // 단축키 main
     public static void main(String[] args) {
 
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx.class);
@@ -16,6 +17,7 @@ public class Ex01 {
         Greet g2 = ctx.getBean("greet", Greet.class);
         g2.hello("야이유");
 
+        // 단축키 sout
         System.out.println(g1 == g2);
 
         ctx.close();

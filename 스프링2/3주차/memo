@@ -1,0 +1,29 @@
+스프링 프레임워크
+spring-context
+
+스프링은 객체 컨테이너
+IoC(Inversion Of Control) : 제어의 역전 
+
+제어 : 개발자가 해야 되는 객체 관리
+역전 : 개발자가 해야 되는 객체 관리 스프링 컨테이너가 대신 수행
+
+  1. BeanFactory
+  2. ApplicationContext
+  3. 싱글톤(SingleTon)객체
+
+스프링DI(Dependency Injection - 의존주입)
+  1. 의존이란?
+    - 변경에 따른 영향이 전파되는 관계
+
+    참고)
+      전략패턴
+        - 변경에 영향을 받는 부분은 닫는다(캡슐화)
+        - 확장에는 열린 구조
+
+    기능 service
+      DAO(Data Access Object)
+      DTO(Data Transfer Object)
+
+  2. DI를 통한 의존 처리
+  3. DI와 의존 객체 변경의 유연함
+  4. 객체 조립기
