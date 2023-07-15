@@ -18,7 +18,8 @@ IoC(Inversion Of Control) : 제어의 역전
     참고)
       전략패턴
         - 변경에 영향을 받는 부분은 닫는다(캡슐화)
-        - 확장에는 열린 구조
+        - 확장에는 열린 구조 : 통제 가능한 수단 제공
+        - 디자인패턴의 가장 기본적인 패턴
 
     기능 service
       DAO(Data Access Object)
