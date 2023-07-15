@@ -2,6 +2,7 @@ package exam03.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.lang.Nullable;
 
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -21,7 +22,7 @@ public class MemberListService {
     private Optional<MemberDao> opt;
 
     @Autowired
-    private DateTimeFormatter formatter;
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     public MemberListService(){}
 
@@ -30,7 +31,8 @@ public class MemberListService {
     }
 
     @Autowired(required = false)
-    public void setFormatter(DateTimeFormatter formatter){
+//    @Autowired // 호출은 되지만 값은 null값
+    public void setFormatter(@Nullable DateTimeFormatter formatter){
         this.formatter = formatter;
     }
 

@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b6b89cdd-3a96-4519-8099-3085e275d830" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exam03/config/AppCtx2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam03/config/AppCtx2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exam03/main/Ex02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam03/main/Ex02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exam03/member/JoinService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam03/member/JoinService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exam03/member/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam03/member/Member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/exam03/member/MemberListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam03/member/MemberListService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../memo" beforeDir="false" afterPath="$PROJECT_DIR$/../memo" afterDir="false" />
     </list>
@@ -53,6 +49,26 @@
       <recent name="C:\Users\Administrator\Desktop\230624\webs\스프링2\3주차\exam01\src\main\java\exam04\member" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="Ex01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exam04.main.Ex01" />
+      <module name="exam01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exam04.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Ex01" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -74,5 +90,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.beans.factory.NoSuchBeanDefinitionException" package="org.springframework.beans.factory" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
