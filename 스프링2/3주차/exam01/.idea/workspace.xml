@@ -8,12 +8,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/exam03/config/AppCtx2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam03/config/AppCtx2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/exam03/main/Ex02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam03/main/Ex02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exam04/config/AppCtx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam03/config/AppCtx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exam04/main/Ex01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam03/main/Ex01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exam04/member/JoinService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam03/member/JoinService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exam04/member/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam03/member/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exam04/member/MemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam03/member/MemberDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exam04/member/MemberListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam03/member/MemberListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exam03/member/JoinService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam03/member/JoinService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exam03/member/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam03/member/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exam03/member/MemberListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam03/member/MemberListService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../memo" beforeDir="false" afterPath="$PROJECT_DIR$/../memo" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -8,6 +8,17 @@ public class Member {
     private String userNm; // 회원명
     private LocalDateTime regDt; // 회원 가입 일자
 
+
+    private String regDtStr;
+
+    public String getRegDtStr() {
+        return regDtStr;
+    }
+
+    public void setRegDtStr(String regDtStr) {
+        this.regDtStr = regDtStr;
+    }
+
     public String getUserId() {
         return userId;
     }
@@ -46,7 +57,7 @@ public class Member {
                 "userId='" + userId + '\'' +
                 ", userPw='" + userPw + '\'' +
                 ", userNm='" + userNm + '\'' +
-                ", regDt=" + regDt +
+                ", regDt=" + regDtStr +
                 '}';
     }
 }
