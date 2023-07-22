@@ -1,0 +1,88 @@
+AOP 프로그래밍
+1. 프록시
+  proxy : 대리하다, 대신하다.
+
+  계산기
+    팩토리얼 연산
+    factorial
+    !5 -> 5 * 4 * 5 * 2 * 1
+
+    데코레이터 패턴 
+      - 핵심기능은 수행 X, 대신 수행 + 추가 기능
+       예) BufferedInputStream(InputStream in) : 다른 입력 스트림 + 버퍼기능 추가
+
+       class BufferedInputStream extends InputStream  {
+        
+        private InpuStream in;
+
+        public BufferedInputStream(InputStream in){
+          this.in = in;
+        }
+
+        public in read(){
+
+          // 버퍼 추가 기능 코드...
+
+          in result = in.read();
+
+          // 버퍼 추가 기능 코드...
+
+          return result;
+        }
+       }
+    
+    참고) 프록시 패턴
+      - 방화벽 : 통제
+
+      - 스프링쪽에서 정의된 프록시는 데코레이터 패턴이지만 관례적으로 프록시라고 사용...
+
+2. AOP
+  - Aspect Oriented Programming
+    - 프록시를 구현하기위한 API(Aplication Programming Interface)
+    - spring-aop
+    
+  - 구현체 aspectjweaver
+
+  https://mvnrepository.com/
+  pom.xml에 추가 : spring-context, aspectjweaver, lombok
+
+  slf4j-api
+  logback-classic
+
+  1) @Aspect
+    - 공통기능이 정의된 클래스명 
+
+  2) @pointcut
+    - 공통기능을 적용할 범위
+
+    execution
+      패턴(ANT)
+
+      .. : 현재 패키지를 포함한 하위 패키지, 모든 클래스
+      . : 현재 패키지의 하위 클래스
+
+      (..) : 0 개 이상의 매개변수
+      (*) : 매개변수가 1개인 패턴
+      (**) : 매개변수 2개인 패턴
+      (int, ..) : 첫번째 매개변수는 int형, 그 다음 매개변수는 0개이상
+    
+  3) @Around
+    - 공통 기능을 수행할 메서드 
+    ProceedingJoinPoint
+      - Object proceed() : 핵심 메서드 호출
+      - Signature getSignature() : 메서드의 정보
+        - String getName() : 메서드 명 
+        - String toLongString() : 자세한 정보 (반환값 타입, 매개변수 타입 ++)
+        - String toshortString() :
+      - Object getTarget() : 핵심 메서드가 정의된 객체
+      - Object[] getArgs() : 매개변수로 사용된 값들
+
+
+  4) EnableAspectjAutoProxy
+  5) execution 명시사 표현식
+  6) Order : 프록시 적용 순서
+    ProxyCache -> ProxyCalculator : 정상적인 캐시 기능이 사용 가능
+
+    ProxyCalculator -> ProxyCache(X)
+
+  7) Around의 Pointcut 설정과 @Pointcut 재사용

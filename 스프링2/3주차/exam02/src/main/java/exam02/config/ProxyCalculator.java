@@ -13,17 +13,19 @@ import java.util.Arrays;
 @Order(2)
 public class ProxyCalculator {
 
-    @Pointcut("execution(* exam02.aopex..*(..))")
-    //@Pointcut("execution(long exam02.aopex..*.factorial(long))")
-    public void publicTarget() {}
+    //  @Pointcut("execution(* exam02.aopex..*(..))")
+    //  @Pointcut("execution(long exam02.aopex..*.factorial(long))")
+    //  public void publicTarget() {}
 
-    @Around("publicTarget()")
+    //  @Around("publicTarget()")
+//    @Around("execution(* exam02.aopex..*(..))")
+    @Around("exam02.config.CommonPointcut.publicTarget()")
     public Object process(ProceedingJoinPoint joinPoint) throws Throwable {
         long stime = System.nanoTime();
         try {
 
-             Object target = joinPoint.getTarget();
-             System.out.println("target : " + target); // 호출한 객체
+            Object target = joinPoint.getTarget();
+            System.out.println("target : " + target); // 호출한 객체
 
             Signature sig = joinPoint.getSignature();
             System.out.println("Signature : " + sig.toLongString()); // 호출된 메서드
@@ -32,7 +34,7 @@ public class ProxyCalculator {
 
             System.out.println(Arrays.toString(args));
 
-            Object result = joinPoint.proceed(); // 핵심 기능  - factorial();
+            Object result = joinPoint.proceed(); // 핵심 기능 - factorial();
 
             return result;
 

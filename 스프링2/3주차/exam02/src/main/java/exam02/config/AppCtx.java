@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
+//@EnableAspectJAutoProxy
 @EnableAspectJAutoProxy(proxyTargetClass = true) // 클래스 기반의 프록시 생성
 public class AppCtx {
 

@@ -4,11 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e51b8a98-fe98-4fa9-9256-48463b04c4fa" name="Changes" comment="" />
+    <list default="true" id="e51b8a98-fe98-4fa9-9256-48463b04c4fa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/Ex01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/Ex02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/ImplCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/ProxyCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/RecCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/aopex/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/aopex/ImplCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/aopex/RecCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/config/AppCtx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/config/CommonPointcut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/config/ProxyCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/config/ProxyCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/main/Ex01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/main/Ex02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exam01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../exam01/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exam01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../exam01/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exam01/src/main/java/exam04/config/AppCtx.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exam01/src/main/java/exam04/config/AppCtx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exam01/src/main/java/exam04/member/JoinService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exam01/src/main/java/exam04/member/JoinService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exam01/src/main/java/exam04/member/MemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exam01/src/main/java/exam04/member/MemberDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exam01/src/main/java/exam04/member/MemberListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exam01/src/main/java/exam04/member/MemberListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exam01/src/main/java/exam05/Book2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exam01/src/main/java/exam05/Book2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memo" beforeDir="false" afterPath="$PROJECT_DIR$/../memo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../4주차/memo" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="ProjectId" id="2SukDoje7qVIlnJC8otHRi8dO7n" />
   <component name="ProjectViewState">
@@ -18,9 +64,82 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Administrator/Desktop/230624/webs/스프링2/3주차/exam02/src/main/java/exam02"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\230624\webs\스프링2\3주차\exam02\src\main\java\exam02" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\230624\webs\스프링2\3주차\exam02\src\main\java\exam02\main" />
+      <recent name="C:\Users\Administrator\Desktop\230624\webs\스프링2\3주차\exam02\src\main\java\exam02\config" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.exam02.main.Ex02">
+    <configuration name="Ex01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exam01.Ex01" />
+      <module name="exam02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exam01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ex02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exam01.Ex02" />
+      <module name="exam02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exam01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="exam02.main.Ex01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exam02.main.Ex01" />
+      <module name="exam02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exam02.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="exam02.main.Ex02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exam02.main.Ex02" />
+      <module name="exam02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exam02.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.exam02.main.Ex02" />
+        <item itemvalue="Application.exam02.main.Ex01" />
+        <item itemvalue="Application.Ex02" />
+        <item itemvalue="Application.Ex01" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -31,5 +150,20 @@
       <updated>1690003737339</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/exam01/Ex01.java</url>
+          <line>3</line>
+          <properties class="exam01.Ex01" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

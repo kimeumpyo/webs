@@ -1,5 +1,6 @@
 package exam04.member;
 
+import exam04.config.ManualBean;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
+@ManualBean // 수동관리 빈!
 public class MemberDao {
     // 저장하는 메모리
     private static Map<String, Member> data = new HashMap<>();
