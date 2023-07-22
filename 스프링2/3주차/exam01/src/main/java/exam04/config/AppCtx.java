@@ -9,9 +9,11 @@ import org.springframework.context.annotation.Bean;
 //@ComponentScan(value={"exam05.member"})
 @ComponentScan("exam04.member") // 1개일 경우 생략이 가능하다
 public class AppCtx {
-   /* @Bean
+   /*
+    @Bean
     public MemberDao memberDao(){
         System.out.println("수동 등록 빈!");
         return new MemberDao();
-    }*/
+    }
+    */
 }

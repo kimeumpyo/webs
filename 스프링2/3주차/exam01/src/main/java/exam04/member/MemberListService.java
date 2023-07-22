@@ -7,8 +7,12 @@ import java.util.List;
 
 @Service
 public class MemberListService {
-    @Autowired
+//    @Autowired
     private MemberDao memberDao;
+
+    public MemberListService(MemberDao memberDao){ // => @Autowired 사용하지 않고!
+        this.memberDao = memberDao;
+    }
 
     public void print() {
         List<Member> members = memberDao.gets();
