@@ -5,40 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e51b8a98-fe98-4fa9-9256-48463b04c4fa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/Ex01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/Ex02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/ImplCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/ProxyCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/RecCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/aopex/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/aopex/ImplCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/aopex/RecCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/config/AppCtx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/config/CommonPointcut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/config/ProxyCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/config/ProxyCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/main/Ex01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/main/Ex02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exam01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../exam01/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exam01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../exam01/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exam01/src/main/java/exam04/config/AppCtx.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exam01/src/main/java/exam04/config/AppCtx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exam01/src/main/java/exam04/member/JoinService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exam01/src/main/java/exam04/member/JoinService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exam01/src/main/java/exam04/member/MemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exam01/src/main/java/exam04/member/MemberDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exam01/src/main/java/exam04/member/MemberListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exam01/src/main/java/exam04/member/MemberListService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exam01/src/main/java/exam05/Book2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exam01/src/main/java/exam05/Book2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../memo" beforeDir="false" afterPath="$PROJECT_DIR$/../memo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../4주차/memo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memo4" beforeDir="false" afterPath="$PROJECT_DIR$/../memo4" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,19 +23,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2SukDoje7qVIlnJC8otHRi8dO7n" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Administrator/Desktop/230624/webs/스프링2/3주차/exam02/src/main/java/exam02"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/Desktop/230624/webs/스프링2/3주차/exam02/src/main/java/exam02&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Desktop\230624\webs\스프링2\3주차\exam02\src\main\java\exam02" />

@@ -1,0 +1,130 @@
+SELECT * FROM book ORDER BY price DESC, publisher DESC;--
+SELECT * FROM book WHERE price >= 10000; 
+SELECT * FROM book WHERE price >= 10000 AND price <= 20000; 
+SELECT * FROM book WHERE price between 10000 AND 20000; 
+SELECT * FROM book WHERE publisher='굿스포츠' OR publisher='대한미디어';
+SELECT * FROM book WHERE (publisher='굿스포츠' OR publisher='대한미디어' OR publisher='이상미디어') AND price >= 8000;
+SELECT * FROM book WHERE publisher in ('굿스포츠', '대한미디어', '이상미디어') AND price >= 8000;
+SELECT * FROM book WHERE bookname LIKE '축구%';
+SELECT * FROM book WHERE bookname LIKE '%단계별%';
+SELECT * FROM book WHERE bookname LIKE '_구%';
+SELECT 100 + NULL FROM DUAL; -- null 은 값이 없기때문에 계산이 안된다! 
+SELECT * FROM customer WHERE phone IS NOT NULL;
+SELECT * FROM book WHERE price BETWEEN 10000 AND 20000; -- 10000 초과, 20000 미만
+SELECT * FROM book WHERE price NOT BETWEEN 10000 AND 20000; -- 10000 미안, 20000 초과
+-- -- -- -- -- -- -- -- --
+SELECT SUM(saleprice) AS '합계' FROM orders; -- 합계  
+SELECT SUM(saleprice) '합계' FROM orders; -- AS 생략이 가능! 
+SELECT 
+	SUM(saleprice) '합계', 
+	AVG(saleprice) '평균',
+    COUNT(*) '주문수',
+    MAX(saleprice) '최대값',
+    MIN(saleprice) '최소값'
+FROM orders;
+
+SELECT
+	custid,
+	SUM(saleprice) 합계,
+    AVG(saleprice) 평균,
+    COUNT(*) 주문수
+ FROM orders GROUP BY custid; -- custid의 같은 값으로 묶어 준다
+ 
+ SELECT
+	custid,
+    saleprice,-- 사용불가 (GROUP BY 명시된 컬럼만 사용가능)
+	SUM(saleprice) 합계,
+    AVG(saleprice) 평균,
+    COUNT(*) 주문수
+ FROM orders GROUP BY custid;
+ 
+ SELECT
+	custid,
+	SUM(saleprice) 합계,
+    AVG(saleprice) 평균,
+    COUNT(*) 주문수
+ FROM orders 
+ GROUP BY custid
+ HAVING COUNT(*) >= 3; -- 주문수가 3개 이상! 
+ 
+ SELECT * FROM orders, customer; -- 테이블 2개가 연결되어 조회 
+ 
+ SELECT * FROM orders, customer
+ WHERE orders.custid = customer.custid;
+ 
+ SELECT o.*, c.name, c.address, b.bookname FROM orders AS o, customer AS c, book b
+ WHERE o.custid = c.custid AND o.bookid = b.bookid;
+ 
+ SELECT * FROM orders
+	JOIN customer USING(custid);
+    
+ SELECT * FROM orders
+	NATURAL JOIN customer;  -- 컬럼이 동일 : 알아서 찾아서 조인을 해준다    
+    
+ SELECT DISTINCT custid FROM orders;
+ SELECT * FROM customer;
+ SELECT c.*, o.orderid, o.saleprice FROM customer c
+	INNER JOIN orders o ON c.custid = o.custid;
+    -- 비교! 
+SELECT c.*, o.orderid, o.saleprice FROM customer c
+	LEFT OUTER JOIN orders o ON c.custid = o.custid; -- 비어있는 값은 NULL 값으로 대체
+
+SELECT c.*, o.orderid, o.saleprice FROM customer c
+	LEFT JOIN orders o ON c.custid = o.custid; -- OUTER 생략이 가능하다!
+    
+SELECT * FROM orders o
+	INNER JOIN customer c ON o.custid = c.custid;
+    
+SELECT o.*, c.name FROM orders o
+	INNER JOIN customer c ON o.custid = c.custid;
+    
+SELECT o.*, c.name, b.bookname FROM orders o
+	INNER JOIN customer c ON o.custid = c.custid
+    INNER JOIN book b ON o.bookid = b.bookid;
+    
+SELECT o.*, c.name, b.bookname FROM orders o
+	JOIN customer c ON o.custid = c.custid
+	JOIN book b ON o.bookid = b.bookid;     -- INNER 생략이 가능하다 
+    
+
+
+SELECT * FROM book WHERE price >= 10000;
+SELECT * FROM book WHERE price <= 15000;
+
+SELECT * FROM book WHERE price >= 10000
+UNION
+SELECT * FROM book WHERE price <= 15000; -- 중복 허용 X
+
+SELECT * FROM book WHERE price >= 10000
+UNION ALL
+SELECT * FROM book WHERE price <= 15000; -- 중복 허용 O
+
+-- 조회 결과의 유무 판단! 
+SELECT * FROM customer WHERE EXISTS (SELECT * FROM orders WHERE custid=5); 
+SELECT * FROM customer WHERE NOT EXISTS (SELECT * FROM orders WHERE custid=5);
+
+
+-- -------------------------------------------------------------
+CREATE TABLE book2 AS SELECT * FROM book WHERE 1 <> 1;
+
+INSERT INTO book2 (bookid, bookname, publisher, price)
+VALUES(1, '책1', '출판사1', 10000);
+
+INSERT INTO book2 (bookid, bookname, publisher, price)
+VALUES(2, '책2', '출판사2', 20000);
+
+INSERT INTO book2
+VALUES(3, '책3', '출판사3', 30000); -- 전체 컬럼명, 순서 동일시 생략 가능
+
+SELECT * FROM book2;
+
+SET SQL_SAFE_UPDATES=0; -- Safe Updates 옵션 미 해제 시 실행
+UPDATE book2
+ SET
+	bookname = '(수정)책2',
+    publisher= '(수정)출판사2'
+WHERE bookid = 2; -- 2번째 데이터 수정
+
+DELETE FROM book2 WHERE bookid=2; -- 2번째 데이터 삭제
+
+

@@ -1,0 +1,43 @@
+데이터베이스 연동
+1. JDBC API
+  JDBC (Java DataBase Connectivity) API(Application Programming Interface)
+
+	java.sql 패키지
+
+	mysql driver 의존성에 추가
+	-> jar -> 실행중 클래스파일 로드(데이터 영역 메모리)
+	- 동적 클래스 로딩
+		1) Class.forName(....)
+		2) COnnection 객체 생성
+			DriverManager
+				.getConnection(String url)
+
+			COnnection
+
+				https://docs.oracle.com/en/java/javase/20/docs/api/java.sql/java/sql/Connection.html
+				Statement
+					- ResultSet executeQuery(String sql); : 결과를 조회하는 쿼리 -  SELECT
+						- 반환값 : ResultSet - 결과를 조회할 수 있는 객체 반환
+
+					- int executeUpdate(String sql); : 데이터의 변경과 관련된 쿼리 - INSERT, UPDATE, DELETE
+						- 반환값 : 반영된 레코드 갯수
+
+				PreparedStatement
+					ResultSet executeQuery();
+					int executeUpdate() 
+
+				CallableStatement
+
+
+jdbcTemplate
+1. 설정하기
+	1) spring-jdbc
+	2) tomcat-jdbc
+
+2. DataSource 설정
+
+3. Tomcat JDBC의 주요 프로퍼티
+
+4. jdbcTemplate을 이용한 쿼리 실행
+	1) query(..), queryForObject(...)
+	2) update(..)
