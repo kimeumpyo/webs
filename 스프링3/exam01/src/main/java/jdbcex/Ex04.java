@@ -25,7 +25,7 @@ public class Ex04 {
             }
 
             rs.close();
-            
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

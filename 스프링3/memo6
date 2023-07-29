@@ -1,0 +1,12 @@
+스프링 컨테이너 생명주기
+객체 생성 -> 의존성 주입 -> 초기화 -> 소멸
+
+초기화 단계 
+	InitializingBean
+		- afterPropertiesSet() 호출
+
+		@Bean
+			-initMethod
+
+소멸 단계
+Dis
