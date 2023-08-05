@@ -21,6 +21,7 @@ public class AppCtx {
         // 커넥션 풀 설정
         ds.setInitialSize(2); // 초기화할 때 생성할 초기 커넥션 개수 10
         ds.setMaxActive(10); // 최대 커넥션 개수 기본값은 100
+        // 연결체크
         ds.setTestWhileIdle(true); // 검사할지 여부
         ds.setTimeBetweenEvictionRunsMillis(1000 * 10); // 검사 주기10초(기본 5초)
         ds.setMinEvictableIdleTimeMillis(1000 * 60 * 2); // 기본값은 60000밀리초(60초)이다.
@@ -30,11 +31,13 @@ public class AppCtx {
 
     @Bean
     public JdbcTemplate jdbcTemplate() {
+
         return new JdbcTemplate(dataSource());
     }
 
     @Bean
     public BookDao bookDao() {
+
         return new BookDao();
     }
 
