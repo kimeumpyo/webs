@@ -47,27 +47,119 @@
 	- 웹MVC 관련 설정 항목
 
 4. 정리
-1) DispatcherServlet
-	- 모든 요청과 응답의 창구
+	1) DispatcherServlet
+		- 모든 요청과 응답의 창구
 
-2) HandlerMapping
-	- 요청이 유입되면 해당하는 컨트롤러 빈을 검색
+	2) HandlerMapping
+		- 요청이 유입되면 해당하는 컨트롤러 빈을 검색
 
-3) HandlerAdapter
-	- Adapter 가 필요한 이유?
-	- 컨트롤러 빈의 유형이 다양하기 때문
-	- @Controller, Controller인터페이스, HttpRequestMapping인터페이스
-	- 사용하는 형식이 다르므로 아답토에서 처리하고 통일된 형식으로 반환
-	- ModelAndView를 반환
+	3) HandlerAdapter
+		- Adapter 가 필요한 이유?
+		- 컨트롤러 빈의 유형이 다양하기 때문
+		- @Controller, Controller인터페이스, HttpRequestMapping인터페이스
+		- 사용하는 형식이 다르므로 아답토에서 처리하고 통일된 형식으로 반환
+		- ModelAndView를 반환
+			참고) 
+				Model : 출력할 데이터
+				View : 출력할 템플릿 경로
+
+	4) ViewResolver : ModelAndView정보 -> View객체 검색
+
+5. 요청 처리에 대한 편의 기능 제공
+	1) 요청 파라미터와 동일 이름의 변수를 요청 메서드에 주입-> 알아서 매칭
+		(HandlerAdapter 객체가 처리하는 동안 주입...)
+	
+	2) 요청 파라미터 이름과 요청 메서드의 매개변수의 이름이 다른 경우?
+		@RequestParam을 통해서 매칭될 요청 파라미터의 이름을 지정
+		- required - true(기본값):  요청 파라미터가 없으면 오류 발생
+		- defaultValue : 요청 파라미터가 없는 경우는 기본값으로 태체
+
+
+	참고) 
+		서플릿에 요청 데이터 조회?
+		HttpServletRequest
+			: String getParameter(String name)
+
+			- 모든 데이터를 직접 조회
+			- 자료형에 맞는 형변환
+			-> 매우 번거롭다
+
+			---------------------------------------------
+
+스프링 웹 MVC
+1. 요청 매핑
+	- 컨트롤러 빈 : 요청 방식(GET, POST, DELETE, PUT, PATCH...) + 주소에 따른 호출 메서드
+
+	@GetMapping : GET
+	@PostMapping : POST 
+	@DeleteMapping : DELETE
+	@PutMapping : PUT
+	@PatchMapping : PATCH
+
+2. 커맨드 객체
+	- getter setter 형태의 메서드의 정의 : 동일한 이름의 파라미터이면 자동 주입
+	- 유효성 검사 편의 기능
+	- 동일명칭의 파라미터에 여러 데이터가 있응 경우 : 배열, 컬렉션 형태로 정의하면 자동 주입
+		- checkbox
+요청 메서드에 자동 주입해주는 관리 객체
+	- HandlerAdapter에서 요청 메서드를 실행 -> 자동 주입
+
+	1) 서블릿 핵심 객체 - 편의상 자동 의존성 주입 : 스프링 컨테이너에 담겨 있다.
+		- HttpServletRequest
+		- HttpServletResponse
+		- HttpSession
+
+	2) 스프링 관리 객체
+		- Model : 속성을 관리하는 객체 -> 뷰에서 사용할 데이터를 속성에 추가
+			.addAttribute(String name, Object value);
+		- Errors : 양식 검증관련 객체, 검증 실패시 지정한 오류 정보가 담겨 있는 객체
+		
 		참고) 
-			Model : 출력할 데이터
-			View : 출력할 템플릿 경로
+			EL식 속성
+				- 속성을 관리하는 객체를 통해서 설정
+				- PageContext PageContext
+				- HttpServletRequest Request
+				- HttpSession session
+				- ServletContext application
 
-4) ViewResolver : ModelAndView정보 -> View객체 검색
+				void setAttiribute(String name, Object value) : 속성 지정
+				Object getAttribute(String name) : 속성 조회
+				void removeAttribute(String name) : 속성 제거
+
+
+3. 리다이렉트
+	페이지 이동
+		응답 헤더 Location: 주소
+		HttpServletResponse::sendRedirect(주소)
+	
+	반환값 문자열 redirect: 주소 -> 주소로 이동
+		응답헤더 Location: 주소
+
+4. 모델
+	- Model : 요청 메서드의 매개변수로 정의 : 알아서 주입
+	- 뷰를 담당하는 템플릿(jsp, 타임리프)에 데이터를 전달하기위한 목적, EL속성
+	- addAttribute(String name, Object value)
+	- addAllattribute(Map<String, Object>...)
+
+	ModelAndView
+		- 요청 메서드가 문자열로 반환해도 ModelAndView로 변환되서 전달
+		- Model : 데이터
+		- View : 템플릿 경로
+5. 폼 태그
+
 
 -----------------------------
 
 자동 스캔 범위에 포함되는 애노테이션
-1) 
 
+@Component
+@Service
+@Inject
+
+@Configuration
 @Controller
+@RestController
+@Aspect
+@ControllerAdvice
+@RestControllerAdvice
+@Repository

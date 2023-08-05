@@ -1,0 +1,21 @@
+타임리프(Thymeleaf)
+1. 설정
+    thymeleaf - spring6
+    thymeleaf - java8time
+    thymeleaf layout
+    
+2. 특징
+    - Natural Template
+    - 원래 HTML과 서버사이드 렌더링 결과 거의 동일하게 보이는 효과
+
+타임리프 기본문법
+1. 타임리프의 주요 식(expression)
+    1) 변수식
+    2) 메세지식
+    3) 링크식
+    4) 선택 변수식
+
+2. 타임리프식 객체
+    1) #Strings
+    2) #numbers
+    3) #dates, #calendars, #temporals
