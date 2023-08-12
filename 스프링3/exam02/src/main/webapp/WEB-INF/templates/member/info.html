@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <th:block th:utext="${title}"></th:block>
+        <th:block th:object="${users}">
+        <dl>
+            <dt th:text="#{userNo}"></dt>
+            <dd th:text="*{userNo}"></dd>
+        </dl>
+        <dl>
+            <dt th:text="#{userId}"></dt>
+            <dd th:text="*{userId}"></dd>
+        </dl>
+        <dl>
+            <dt th:text="#{userNm}"></dt>
+            <dd th:text="*{userNm}"></dd>
+        </dl>
+        <dl>
+            <dt th:text="#{mobile}"></dt>
+            <dd th:text="*{mobile}"></dd>
+        </dl>
+        <dl>
+            <dt th:text="#{regDt}"></dt>
+            <dd th:text="*{regDt}"></dd>
+        </dl>
+
+            <a th:href="@{/member2/join}">회원가입</a>
+            <br>
+            <a th:href="@{/member2/join(userNO=*{userNo}, userId=*{userId})}">회원가입</a>
+            <br>
+            <a th:href="@{/member2/info/{id}(id=*{userId})}">회원정보확인</a>
+        </th:block>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+스프링 MVC
+
+1. 메시지
+    1) MessageSource
+    2) ResourceBundleMessageSource
+    3) 다국어 지원 위한 메시지 파일
+
+2. 커맨드 객체 검증
+    1) validator 인터페이스
+        - supports
+            : 검증 하려고 하는 커맨드객체를 한정
+        -validate(Object target, Errors errors) : 검증 수행 코드
+            target : 커맨드 객체
+
+    2) Errors
+        - 커맨드 객체 검증 실패시 에러에대한 정보가 담겨 있는 객체
+        - reject("에러 코드"); -> 에러코드에 해당하는 메세지를 메시지 파일에서 조회, 출력
+        - reject("에러 코드","기본 메세지"); -> 에러코드에 해당하는 메세지를 메시지 파일에서 조회, 출력, 없을땐 기본 메세지에서 대체
+        - rejectValue("필드명", "에러코드"); -> 특정 필드 한정한 에러 메세지(메세지 파일)
+        - rejectValue("필드명", "에러코드", "기본 메세지"); -> 메세지 파일에 코드가 X -> 기본 메세지로 대체
+
+        - boolean hasErrors() : reject, rejectValue가 1개 이상 호출되면 true
+
+    3) ValidationUrtils
+
+        참고)
+            커맨드객체 : 클래스명에서 첫글자만 소문자로된 EL 식 변수로 자동 추가
+
+            th:field="${커맨드 객체의 속성 값}"
+                - 양식 입력 항목 태그에 맞게 값이 입력(value)되거나 선택(checked, selected)
+
+            @ModelAttribute
+                - value="" : 커맨드 객체의 이름을 변경
+                - name=""
+
+3. 에러 코드에 해당하는 메시지 코드를 찾는 규칙
+    - 에러코드 + "." + 커맨드 객체이름 + "." + 필드명
+    - 에러코드 + "." + 필드명
+    - 에러코드 + "." + 필드타입
+    - 에러코드
+
+4. 프로퍼티 타입이 List나 목록인 경우 다음 순서를 사용해서 메시지 코드를 생성한다.
+
+에러코드 + "." + 
