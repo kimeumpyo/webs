@@ -1,0 +1,110 @@
+스프링 MVC
+
+	쿠키
+	- 개인화된 서비스 구현 기술
+	- 브라우저별 데이터
+
+	참고)
+	ctrl + shift + n : 시크릿 모드
+
+1. 쿠키의 동작과정
+	1) 쿠키 생성단계
+		서버에서 응답 헤더 : set-Cookie : 키 = 값; 키 = 값
+
+		HttpServletResponse
+			- addCookie(Cookie cookie)
+
+	2) 쿠키 저장단계
+		브라우저가 Set-Cookie 응답 헤더 값 -> 저장
+	
+	3) 쿠키 전송단계
+		브라우저에서 요청 헤더 Cookie에 담아서 서버로 전송
+
+		HttpServletRequest
+			-Cookie[]getCookie()
+
+		HttpServletRequest
+		HttpServletResponse
+		
+		스프링 : @CookeiValue -> 편의를 위한 에노테이션 제공 
+
+2. Cookie 클래스의 메서드 종류
+3. 쿠키 객체 얻기
+4. 쿠키 객체의 정보 얻기
+5. 쿠키 삭제
+	- setMaxAge(0)
+
+6. 컨트롤러에서 쿠키 사용하기
+
+세션
+	- 쿠키 단점
+		1) 데이터가 브라우저에 저장 : 노출 가능 O
+		2) 브라우저에서 서버로 데이터 정송(요청 헤더 - Cookie) : 네트워크에 부담
+		3) 저장 데이터는 문자열만 가능
+
+	- 세션
+		1) 데이터를 서버에 저장 : 보안 O
+		2) 개개인의 브라우저별 데이터를 서버에서 찾으려면?
+			브라우저별 구분 쿠키 값 : JSESSIONID
+				-> 서버로 전송 -> 서버에서 개인화된 데이터를 조회
+		3) 저장 데이터의 형식을 다양화
+		
+		HttpSession 인터페이스
+			HttpServletRequest
+				:getSession(...)
+
+1. session 내장객체 메서드 종류 
+2. 세션 생성
+	void setAttribute(String name, Object value);
+	
+3. 세션 정보
+	Object getAttribute(String name)
+
+4. 세션 삭제
+	void remobeAttribute(String name)
+
+	void invalidate() : 세션 비우기 (전체 삭제)
+
+5. 세션 유효 시간 설정 - 5분
+
+	setMaxInactiveInterval(...)
+
+인터셉터
+
+1. HandlerInterceptor 인터페이스 구현하기
+	1) boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception;
+	: 컨트롤러 빈이 실행 되기 전 호출, 컨트롤러 빈 실행 전 공통 처리 부분
+	: 반환값 false -> 컨트롤러 빈이 실행 X, 반환값이 true -> 컨트롤러 빈이 실행 : 접근 통제
+
+	2) void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception
+	: 컨트롤러 빈이 실행 되고 ModelAndView가 반환 된 직후에 호출,
+
+	3) void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)throws Exception;
+	: 응답 완료 후
+
+2. HandlerInterceptor 설정하기
+WebMvcConfigurer::addInterceptors
+
+/mypage : 회원전용
+
+ANT 경로 패턴
+
+*
+	예) /mypage/* : mypage 경로 하위 모든 파일
+
+**
+	예) /mypage/** : mypage 경로 하위 모든 파일 + 하위 경로의 모든 파일
+
+? : 문자 1개
+	예) /m?00 : /m100, /ma00
+
+JSP - 속성을 관리하는 4가지 내장객체 : EL식 속성으로 바로 접근 가능
+
+PageContext
+HttpServletRequest
+HttpSession
+ServletContext
+
+	setAttribute(...)
+	getAttribute(...)
+	removeAttribute(...)

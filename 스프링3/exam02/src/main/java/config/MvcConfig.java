@@ -7,6 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.config.annotation.*;
 import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
@@ -16,12 +17,31 @@ import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 
 @Configuration
 @EnableWebMvc
+@Import(DbConfig.class)
 public class MvcConfig implements WebMvcConfigurer {
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(memberOnlyInterceptor())
+                .addPathPatterns("/mypage/**");
+    }
+    @Bean
+    public MemberOnlyInterceptor memberOnlyInterceptor(){
+        return new MemberOnlyInterceptor();
+    }
 
+    /*
+            @Override
+            public Validator getValidator() {
+                return new JoinValidator();
+            }
+        */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/")
                 .setViewName("main/index");
+
+        registry.addViewController("/mypage")
+                .setViewName("main/mypage");
     }
 
     @Override
@@ -32,6 +52,7 @@ public class MvcConfig implements WebMvcConfigurer {
 
     @Autowired
     private ApplicationContext applicationContext;
+
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
@@ -72,15 +93,16 @@ public class MvcConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public MessageSource messageSource(){
+    public MessageSource messageSource() {
         ResourceBundleMessageSource ms = new ResourceBundleMessageSource();
         ms.setDefaultEncoding("UTF-8");
         ms.setBasenames("messages.commons");
 
         return ms;
     }
+
     @Bean
-    public Utils utils(){
+    public Utils utils() {
         return new Utils();
     }
 }

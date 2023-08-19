@@ -21,7 +21,11 @@
 
         - boolean hasErrors() : reject, rejectValue가 1개 이상 호출되면 true
 
-    3) ValidationUrtils
+        사장 많이 하는 검증? 필수 입력 항목
+
+    3) ValidationUrtils : 필수 항목 검증 편의 메서드
+        rejectIfEmpty(...) : ...null, 공백없이 비어 있는 경우
+        rejectIfEmptyOrWhitespace : 
 
         참고)
             커맨드객체 : 클래스명에서 첫글자만 소문자로된 EL 식 변수로 자동 추가
@@ -41,4 +45,42 @@
 
 4. 프로퍼티 타입이 List나 목록인 경우 다음 순서를 사용해서 메시지 코드를 생성한다.
 
-에러코드 + "." + 
+    에러코드 + "." + 
+
+5. 글로벌 범위 Validator와 컨트롤러 범위Validator
+    1) 글로벌 범위 Valitor 설정과 @Valid 애노테이션
+        - WebMvcConfigurer의 getValidalot()
+    2) @InitBinder 애노테이션을 이용한 컨트롤러 범위 Balidator
+        @InitBinder
+        protector
+
+
+6. Bean Validation
+    Bean Validation API : 자바에서 제동한 표준 API
+    hibernate validator : API 구현체
+
+회원가입 비번
+
+암호화
+    1) 양방향 암호화
+        암호화 <--> 복호화 : AES, ARIA...
+
+    2) 단방향 암호화
+        복호화 X : 해시
+            - 고정 해시
+                같은 값에 대해서 같은 해시 값
+                - md5, sha1, sha256...
+                
+                sha256 -> abc
+                BA7816BF8F01CFEA414140DE5DAE2223B00361A396177A9CB410FF61F20015AD (고정!)
+
+            - 유동 해시
+                해시를 행성할때마다 다른 값
+                    BCrypt
+                    
+                    BCrypt -> abc
+                    $2a$12$gjfv7R/3d2uTJchgw63Qzubr6aLqIAszfU89PmOJQur/QkLii2Xri(바뀝!)
+                    $2a$12$bq9XzUUGsnbiHlZ77v5ZIeo.wF0UT8PxDCWmdzptDxA.UMi49BH.W
+
+                    
+                    

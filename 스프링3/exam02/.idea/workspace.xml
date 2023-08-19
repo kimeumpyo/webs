@@ -5,34 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86458e3c-3ff8-417d-ad5c-c585b2047a28" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/commons/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/member/JoinForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/member/JoinValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/member/Member2Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/member/Member3Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/Users.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/messages/commons.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/messages/commons_en.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/layouts/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/main/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/member/info.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/member/info2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/member/info3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/member/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/outlines/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/outlines/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memo/memo3" beforeDir="false" afterPath="$PROJECT_DIR$/memo/memo3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memo/memo4" beforeDir="false" afterPath="$PROJECT_DIR$/memo/memo4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/ControllerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/ControllerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/DbConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/DbConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/MemberOnlyInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/MemberOnlyInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/MvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/member/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/member/join.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/CookieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/CookieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/member/JoinForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/member/JoinForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/member/JoinValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/member/JoinValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/member/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/member/LoginForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/member/LoginValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/member/LoginValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/member/Member3Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/member/Member3Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/member/JoinService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/JoinService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/member/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/member/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/messages/commons.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages/commons.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/main/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/main/mypage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/main/mypage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/member/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/member/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -61,11 +61,12 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Administrator/Desktop/230624/webs/스프링3/exam02/src",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/WEB15_SJW",
     "project.structure.last.edited": "모듈",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "File.Encoding"
+    "settings.editor.selected.configurable": "editor.preferences.import"
   }
 }]]></component>
   <component name="RunManager">
