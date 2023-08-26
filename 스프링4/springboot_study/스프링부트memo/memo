@@ -1,0 +1,42 @@
+에노테이션
+@Component
+@Service
+@Inject
+
+@Configuration
+@Controller
+@RestController
+@ControllerAdvice
+@RestController
+@Repository
+
+스프링부트
+1. 설치 및 설정
+    1) starter 의존성
+    2) 기본 패키지 하위 경로 : 컴포넌트 스캔 범위 설정
+    3) XML 설정 -> 자바 코드 수준의 설정
+    4) web starter -> 톰캣 서버 내장
+        -> jar 배포
+        -> 설정 오류도 방지
+
+    WEB-INF -> 노출 X : web.xml
+
+    빌드 -> 서버 마다 다른 설정 파일 profile 설정을 통해 분리
+    
+    mvn clean package : 배포 파일 생성 -> target디렉토리에 ...jar 생성
+
+JSON 응답과 요청 처리
+
+1.JSON 개용
+2. @RestController
+3. @ResponstBody
+4. @Jsonlgnore
+5. @JsonFormat
+6. @RequestBody
+7. ResponseEntity
+    1) status(...)
+    2) body(...)
+    3) build()
+
+8. @Valid
+9. @ExceprionHandler
