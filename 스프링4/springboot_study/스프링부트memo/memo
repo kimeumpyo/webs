@@ -18,6 +18,8 @@
     4) web starter -> 톰캣 서버 내장
         -> jar 배포
         -> 설정 오류도 방지
+    5) 컨텍스트 경로 : / (기본)
+    6) WebMvcConfigurer 인터페이스
 
     WEB-INF -> 노출 X : web.xml
 
@@ -31,9 +33,24 @@
         -> 설정 파일 application-real.properties
 
 JSON 응답과 요청 처리
+    - 의존성
+        jackson-databind
+        jackson-datatype-jsr310 : java Date Time API
 
-1.JSON 개용
+1.JSON 개요
+    JSON(JavaScript Object Notation) : 자바 스크립트 객체 표기법
+    { "이름" : "값", "이름" : "값"} 의 문자열
+
+     자바 객체 -> JSON 문자열 변환
+     JSON 문자열 -> 자바 객체
+
+
 2. @RestController
+    -> 응답 : JSON 문자열(자바 객체 -> JSON 문자열로 변환) : 응답 헤더 application/json
+    -> 일반 뭉자열 : String
+    -> void : 출력 데이터X (body 없는 형태)
+
+
 3. @ResponstBody
 4. @Jsonlgnore
 5. @JsonFormat
