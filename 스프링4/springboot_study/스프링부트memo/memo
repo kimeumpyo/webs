@@ -25,6 +25,11 @@
     
     mvn clean package : 배포 파일 생성 -> target디렉토리에 ...jar 생성
 
+    java -jar 파일명.jar
+
+    java -jar -Dspring.profiles.active=real 파일명.jar
+        -> 설정 파일 application-real.properties
+
 JSON 응답과 요청 처리
 
 1.JSON 개용
