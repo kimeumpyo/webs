@@ -1,0 +1,32 @@
+스프링 MVC
+1. 날짜 값 변환
+    - @DateTimeFormat
+        - Spring6 기본 ISO 날짜 표기 형식 -> 자동 변환(String -> LocalDate,
+            LocalTime, LocalDateTime)
+            -> 다른 형식? 오류, 오류 코드 : typeMismatch
+
+            - pattern
+
+            typeMismatch
+            typeMismatch.필드명
+            typeMismatch.자료형(java.lang.LocalDate)
+            typeMismatch.커맨드객체명.필드명
+
+2. @PathVariable : 경로 변수
+
+3. 익셉션 처리
+    1) @ ExceptionHandler
+        - 기본 톰캣 오류 -> 너무 많은 정보 노출(보안 문제)
+        - 디자인적 개선 필요
+
+        - 메서드의 매개변수로 자동 주입
+            1) 발생한 에러 객체
+            2) HttpServletRequest, HttpServletResponse,
+            3) HttpSession
+            4) Model
+
+    2) @ControllerAdviece
+        - 공통 컨트롤러 
+        - @ExceptionHandler : 지정된 범위에 공통으러 에러 처리
+        
+

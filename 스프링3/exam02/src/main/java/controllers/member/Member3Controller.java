@@ -78,4 +78,15 @@ public class Member3Controller {
         binder.setValidator(new JoinValidator());
     }
     */
+    @GetMapping("/list2")
+    public String list(@Valid MemberSearch memberSearch, Errors errors) {
+        System.out.println(memberSearch);
+        return "member/list2";
+    }
+
+    @GetMapping("/info/{id}")
+    public String info(@PathVariable(name="id", required = false) String userId) {
+        System.out.println("userId : " + userId);
+        return "main/mypage";
+    }
 }

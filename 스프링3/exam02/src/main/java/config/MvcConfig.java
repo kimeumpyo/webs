@@ -3,12 +3,15 @@ package config;
 import commons.Utils;
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.servlet.config.annotation.*;
 import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
 import org.thymeleaf.spring6.SpringTemplateEngine;
@@ -17,8 +20,14 @@ import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 
 @Configuration
 @EnableWebMvc
-@Import(DbConfig.class)
+@Import(DbConfig2.class)
 public class MvcConfig implements WebMvcConfigurer {
+    @Value("${env}")
+    private String env;
+
+    @Value("${file.upload.path}")
+    private String uploadPath;
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(memberOnlyInterceptor())
@@ -48,6 +57,9 @@ public class MvcConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**")
                 .addResourceLocations("classpath:/static/");
+
+        registry.addResourceHandler("/uploads/**")
+                .addResourceLocations("file:///" + uploadPath);
     }
 
     @Autowired
@@ -60,11 +72,14 @@ public class MvcConfig implements WebMvcConfigurer {
 
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
+        boolean isCache = env.equals("real") ? true : false;
+        System.out.println("env : " + env);
+
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setPrefix("/WEB-INF/templates/");
         templateResolver.setSuffix(".html");
-        templateResolver.setCacheable(false); // 한번 번역한 파일은 그대로 사용한다 (false = 바뀐내용을 바로 확인이 가능하다!)
+        templateResolver.setCacheable(isCache); // 한번 번역한 파일은 그대로 사용한다 (false = 바뀐내용을 바로 확인이 가능하다!)
         return templateResolver;
     }
 
@@ -104,5 +119,14 @@ public class MvcConfig implements WebMvcConfigurer {
     @Bean
     public Utils utils() {
         return new Utils();
+    }
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer properties(){
+        PropertySourcesPlaceholderConfigurer conf = new PropertySourcesPlaceholderConfigurer();
+
+        conf.setLocations(
+                new ClassPathResource("application.properties")
+        );
+        return conf;
     }
 }

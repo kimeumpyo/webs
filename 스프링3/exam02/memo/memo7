@@ -1,0 +1,39 @@
+스프링 파일 업로드(MultipartFile)
+1. multipart란?
+    form 태그 속성
+    enctype="multipart/form-date"
+    -> 요청 헤더  content-type: multipart/form-date....
+
+    - 일반 양식 데이터 파트
+    - 파일 데이터 파트
+    -> 멀티 파트
+
+2. 설정
+<servlet>
+    ... 생략
+    <multipart-config>
+        <max-file-size>20971520</max-file-size> <!-- 1MB*20-->
+        <max-request-size>41953040</max-request-size> <!-- 40MB -->
+    </multipart-config>
+</servlet>
+
+1kb -> 1024byte
+1mb -> 1024kb
+
+1024 * 1024 * 20 -> 2mb
+
+3. MultipartFile
+
+    - 파일 업로드 경로를 URL 경로 조회 -> 설정
+    - WebMvcConfigurer
+        - addResoutceHandlers(...)
+
+
+프로필
+1. @Profile
+    : 생성될 스프링 빈을 프로필에 따라서 통제
+
+2. spring.profiles.active
+
+프로퍼티 파일
+    1) 
