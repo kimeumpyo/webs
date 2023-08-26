@@ -1,5 +1,6 @@
 package org.koreait.restcontrollers;
 
+import lombok.extern.slf4j.Slf4j;
 import org.koreait.models.member.Member;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +10,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/member")
 public class MemberController {
@@ -39,5 +41,13 @@ public class MemberController {
             members.add(member);
         }
         return members;
+    }
+    @GetMapping("/test1")
+    public String test1(){
+        return "Hello"; // 문자열
+    }
+    @GetMapping("/test2")
+    public void test2(){
+        log.info("내부 처리...");
     }
 }

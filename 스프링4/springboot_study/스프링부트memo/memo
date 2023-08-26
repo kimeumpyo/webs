@@ -1,4 +1,4 @@
-에노테이션
+애노테이션
 @Component
 @Service
 @Inject
@@ -49,16 +49,85 @@ JSON 응답과 요청 처리
     -> 응답 : JSON 문자열(자바 객체 -> JSON 문자열로 변환) : 응답 헤더 application/json
     -> 일반 뭉자열 : String
     -> void : 출력 데이터X (body 없는 형태)
+    -> spring5에서 추가된 애노테이션
+
+    참고) 
+    slf4j api + logback classic
+
+    Lombok
+    @Log
+    @Slf4j
+    @Log4j
+
+    log 변수 
+
+    FATAL
+    ERROR 
+    WARINING
+    INFO
+    DEBUG
+    TRACE
 
 
-3. @ResponstBody
+3. @ResponseBody
+    - 메서드 단위 REST 처리
+    - 일반 컨트롤러에서 일부 메서드만 JSON 응답 변경할 때
+
 4. @Jsonlgnore
-5. @JsonFormat
-6. @RequestBody
-7. ResponseEntity
-    1) status(...)
-    2) body(...)
-    3) build()
+    - JSON 변환 제외
 
+5. @JsonFormat
+    - 날짜의 형식화
+
+응답에 관한!    ↑
+---------------------------------------
+요정에 관한!    ↓
+
+6. @RequestBody
+    - content-type : application/json 형식을 변환하기 위해 알려주는 애노테이션
+
+    @RequestBody 커맨드 객체
+
+참고)
+    기본 POST 요청 방식 : 서블릿이 기본 해석하는 요청 데이터 형식
+    content-type : application/x-www.form-urlencoded
+        이름=값&이름=값&...
+
+    *************
+
+    응답코드
+    2xx
+        200 - 정상 응답
+        201 - CREATED 작성됨
+        202 - ACCEPTED
+
+    3xx
+        301, 302 - 페이지 이동
+        304 - 캐시됨 서버에 요청x, 브라우저에 있는 캐시 데이터 사용
+
+    4xx
+        400 - BAD REQUEST - 잘못된 요청
+        401 - UNAUTHORIZED - 접근 권한 없음
+        403 - FORBIDDEN
+        404 - NOT FOUND - 페이지 없음
+        405 - METHOD NOT ALLLOWED
+
+    5xx
+        500 - INTERNAL SERVER ERROR
+        501,502 
+
+    *************
+
+7. ResponseEntity
+    - 응답 상태 코드를 상세 하게 설정
+    - 응답 body를 출력, 미출력 통제
+
+    1) status(...) : 응답 상태 코드
+    2) body(...) : 출력 body
+    3) build() : body 출력 X
+    
+    참고)
+        기본 응답 코드 200 / 500
+        
 8. @Valid
 9. @ExceprionHandler
