@@ -37,7 +37,7 @@ JSON 응답과 요청 처리
         jackson-databind
         jackson-datatype-jsr310 : java Date Time API
 
-1.JSON 개요
+1. JSON 개요
     JSON(JavaScript Object Notation) : 자바 스크립트 객체 표기법
     { "이름" : "값", "이름" : "값"} 의 문자열
 
@@ -47,9 +47,9 @@ JSON 응답과 요청 처리
 
 2. @RestController
     -> 응답 : JSON 문자열(자바 객체 -> JSON 문자열로 변환) : 응답 헤더 application/json
-    -> 일반 뭉자열 : String
+    -> 일반 문자열 : String
     -> void : 출력 데이터X (body 없는 형태)
-    -> spring5에서 추가된 애노테이션
+    -> 스프링5에서 추가된 애노테이션
 
     참고) 
     slf4j api + logback classic
@@ -90,7 +90,7 @@ JSON 응답과 요청 처리
 
 참고)
     기본 POST 요청 방식 : 서블릿이 기본 해석하는 요청 데이터 형식
-    content-type : application/x-www.form-urlencoded
+    content-type : application/x-www-form-urlencoded (16진수로 변형)
         이름=값&이름=값&...
 
     *************
@@ -128,6 +128,6 @@ JSON 응답과 요청 처리
     
     참고)
         기본 응답 코드 200 / 500
-        
 8. @Valid
 9. @ExceprionHandler
+    - @RestControllerAdvice

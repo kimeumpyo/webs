@@ -1,2 +1,13 @@
-package org.koreait.commons.rest;public class JSONData {
+package org.koreait.commons.rest;
+
+import lombok.Data;
+import org.springframework.http.HttpStatus;
+
+@Data
+public class JSONData<T> {
+    private boolean success;
+    private HttpStatus status = HttpStatus.OK;
+    private T data;
+    private String message;
+
 }

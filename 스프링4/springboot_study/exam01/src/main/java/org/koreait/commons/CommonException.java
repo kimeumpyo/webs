@@ -1,2 +1,20 @@
-package org.koreait.commons;public class CommonException {
+package org.koreait.commons;
+
+import org.springframework.http.HttpStatus;
+
+public class CommonException extends RuntimeException{
+    private HttpStatus status;
+
+    public HttpStatus getStatus(){
+        return status;
+    }
+
+    public CommonException(String message, HttpStatus status){
+        super(message);
+        this.status = status;
+    }
+
+    public CommonException(String message){
+        this(message, HttpStatus.INTERNAL_SERVER_ERROR); // 500
+    }
 }

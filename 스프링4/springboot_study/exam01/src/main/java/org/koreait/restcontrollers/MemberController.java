@@ -1,7 +1,10 @@
 package org.koreait.restcontrollers;
 
 import lombok.extern.slf4j.Slf4j;
+import org.koreait.commons.rest.JSONData;
 import org.koreait.models.member.Member;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +18,7 @@ import java.util.List;
 @RequestMapping("/api/member")
 public class MemberController {
     @GetMapping("/info")
-    public Member info(){
+    public ResponseEntity<JSONData<Member>> info(){
         Member member = Member.builder()
                 .userNo(1L)
                 .userId("user01")
@@ -24,7 +27,14 @@ public class MemberController {
                 .email("user01@test.org")
                 .regDt(LocalDateTime.now())
                 .build();
-        return member;
+
+        // return ResponseEntity.status(HttpStatus.OK).body(member);
+        // return ResponseEntity.ok(member);
+        JSONData<Member> data = new JSONData<>();
+        data.setSuccess(true);
+        data.setData(member);
+
+        return ResponseEntity.ok(data);
     }
     @GetMapping("/list")
     public List<Member> list(){
