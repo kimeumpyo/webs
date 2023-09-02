@@ -14,8 +14,8 @@ Spring Data JPA
         - EntityManager : 영속성 관리 객체 - 스프링이 관리하는 객체 등록되어 있다(bean)
             - void persist(엔티티 객체) -> 엔티티 영속 상태 -> 엔티티의 변화 감지
             - void flush() : 변화 상태 -> DB에 반영 
-
             - void detach() : 영속성 분리 -> 엔티티의 변화 감지 X
+            - void merge() : 분히상태 엔티티 -> 영속 상태 : 엔티티의 변화 감지 O
             - void clear() :  영속성 상태 있는 엔티티를 모두 비우기
             - void close() : 영속성 메모리 제거
             - void remove() : 영속성 상태 -> 제거 상태(변화 감지 상태) : DELETE 쿼리
@@ -31,10 +31,22 @@ Spring Data JPA
                  update - 개발 중기
 
         실 서버 : validate, none
+        
+    JPQL : Java persistence Qurey Language
+        - 엔티티 기준의 쿼리, 조회 결과 -> 영속 상태
 
 3. Entity 설계하기
     1) 엔티티 매핑 관련 애노테이션
+        @GeneratedValue
+            - 자동 증감번호
+            - DBMS : 자동 증감번호 생성 전략에 차이
+             mysql : PRIMARY KEY + AUTO_INCREMENT : 시스템에서 알아서 생성
+             oracle : 시퀀스 객체
+            - 테이블 
+
     2) 공통속성화
+        - 상속
+        - @MappedSuperclass
 
 4. Repository 설계하기
 
